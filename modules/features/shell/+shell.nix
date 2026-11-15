@@ -7,6 +7,7 @@
         clipboard-shell
         fresh-editor
         tldr
+        topgrade
         yazi
         nushell # Interactive Shell
       ];
