@@ -3,7 +3,10 @@
 {
   flake.aspects = { aspects, ... }: {
     defaults = {
-      includes = with aspects; [ xdg ];
+      includes = with aspects; [
+        flatpak
+        xdg
+      ];
 
       nixos = { ... }: {
         system.stateVersion = "26.11";

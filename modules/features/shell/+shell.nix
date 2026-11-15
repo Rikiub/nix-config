@@ -8,6 +8,7 @@
         fresh-editor
         tldr
         yazi
+        nx
         nushell # Interactive Shell
       ];
 

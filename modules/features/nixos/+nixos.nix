@@ -13,10 +13,8 @@
         vm
 
         # Programs
-        flatpak
         fuse
         nix-ld
-        nx
         ssh
         sudo
       ];
