@@ -7,25 +7,24 @@ default:
 [group("nix")]
 switch host="":
     @just sync
-    nh os switch --quiet .#{{ host }}
+    nh os switch .#{{ host }}
 
 [doc("Build and activate a specified NixOS flake configuration specialisation")]
 [group("nix")]
 test host="":
     @just sync
-    nh os test --quiet .#{{ host }}
+    nh os test .#{{ host }}
 
 [doc("Rollback to previous generation")]
 [group("nix")]
 rollback:
     nh os rollback .
 
-[doc("Update all the flake inputs and rebuild system")]
+[doc("Update flake inputs and tools in the system")]
 [group("nix")]
 update:
     @just sync
-    nh os switch --quiet --update .
-    flatpak update
+    topgrade
 
 [doc("Sync flake inputs")]
 [group("nix")]
