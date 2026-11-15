@@ -25,6 +25,7 @@ rollback:
 update:
     @just sync
     nh os switch --quiet --update .
+    flatpak update
 
 [doc("Sync flake inputs")]
 [group("nix")]

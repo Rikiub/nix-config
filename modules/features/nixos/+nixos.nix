@@ -13,6 +13,7 @@
         vm
 
         # Programs
+        flatpak
         fuse
         nix-ld
         nx
@@ -21,6 +22,7 @@
       ];
 
       nixos = { };
+      homeManager = { };
     };
   };
 }
