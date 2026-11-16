@@ -20,7 +20,7 @@ test host="":
 rollback:
     nh os rollback .
 
-[doc("Update flake inputs and CLI tools with topgrade")]
+[doc("Update flake inputs and external packages with topgrade")]
 [group("nix")]
 update *args:
     @just sync
