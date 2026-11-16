@@ -2,6 +2,10 @@
 {
   den.default = {
     includes = with den.aspects; [
+      den.batteries.hostname
+      den.batteries.define-user
+      den.batteries.flake-scope
+
       flatpak
       xdg
     ];

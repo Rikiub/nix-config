@@ -1,8 +1,7 @@
 {
-  den.aspects.nix.nixos = { host, ... }: {
+  den.aspects.nix.nixos = { ... }: {
     # Metadata
     system.nixos.label = "NixOS";
-    networking.hostName = host.name;
 
     # NixOS Documentation
     documentation.nixos = {
