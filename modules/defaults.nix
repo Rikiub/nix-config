@@ -37,6 +37,6 @@
     };
   };
 
-  # enable hm by default
+  # Enable home-manager by default
   den.schema.user.classes = lib.mkDefault [ "homeManager" ];
 }
