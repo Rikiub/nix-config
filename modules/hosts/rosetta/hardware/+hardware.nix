@@ -1,4 +1,4 @@
-{ den, ... }:
+{ den, inputs, ... }:
 {
   den.aspects.rosetta = {
     includes = with den.aspects; [
@@ -10,7 +10,7 @@
       openrgb
     ];
 
-    nixos = { inputs, ... }: {
+    nixos = { ... }: {
       # General
       imports = with inputs.nixos-hardware.nixosModules; [
         ./_hardware-configuration.nix

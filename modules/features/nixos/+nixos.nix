@@ -9,7 +9,6 @@
       kernel
       locale
       nix
-      #users
       vm
 
       # Programs

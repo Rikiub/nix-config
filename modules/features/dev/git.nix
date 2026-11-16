@@ -4,9 +4,10 @@
       git = {
         enable = true;
         settings = {
+          # Identity is opt-in: users can define it in their own aspect.
           user = {
-            name = user.name or null;
-            email = user.email or null;
+            name = user.name;
+            email = "rikiub.dev@gmail.com";
           };
 
           init.defaultBranch = "main";
