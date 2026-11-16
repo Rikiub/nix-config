@@ -1,5 +1,5 @@
 {
-  flake.aspects.git.homeManager = { pkgs, user, ... }: {
+  flake.aspects.git.homeManager = { user, ... }: {
     programs = {
       git = {
         enable = true;
