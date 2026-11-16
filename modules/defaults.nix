@@ -16,21 +16,21 @@
     nixos = { ... }: {
       system.stateVersion = "26.11";
 
-      # Allow unfree packages
-      nixpkgs.config.allowUnfree = true;
-
       # Experimental features
       nix.settings.experimental-features = [
         "nix-command"
         "flakes"
       ];
+
+      # Allow unfree packages
+      nixpkgs.config.allowUnfree = true;
+
+      # Use the system pkgs for home-manager users
+      home-manager.useGlobalPkgs = true;
     };
 
     homeManager = { pkgs, ... }: {
       home.stateVersion = "26.11";
-
-      # Allow unfree packagrs
-      nixpkgs.config.allowUnfree = true;
 
       # Avoid errors for existing dotfiles
       home.backupCommand = "${pkgs.trash-cli}/bin/trash";
