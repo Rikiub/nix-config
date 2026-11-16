@@ -27,8 +27,12 @@
     };
 
     dolphin = {
-      nixos = { ... }: {
+      nixos = { pkgs, ... }: {
         services.udisks2.enable = true; # For show drives
+
+        # Fix "Open With" menu
+        environment.etc."xdg/menus/applications.menu".source =
+          "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
       };
 
       homeManager = { pkgs, ... }: {
