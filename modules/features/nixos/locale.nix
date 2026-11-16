@@ -10,7 +10,7 @@
       LC_COLLATE = "C";
     };
 
-    # Configure keymap in X11
+    # Configure keymap
     services.xserver.xkb = {
       layout = "us";
       variant = "altgr-intl";
