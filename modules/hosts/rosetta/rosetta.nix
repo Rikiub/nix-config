@@ -1,7 +1,8 @@
+{ den, ... }:
 {
-  flake.aspects = { aspects, ... }: {
+  den.aspects = {
     rosetta = {
-      includes = with aspects; [
+      includes = with den.aspects; [
         # System
         nixos
 
