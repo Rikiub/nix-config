@@ -11,17 +11,6 @@
 
       settings = {
         theme = "dracula";
-
-        lsp = {
-          python = [
-            {
-              enabled = true;
-              auto_start = true;
-              command = "ty";
-              args = [ "server" ];
-            }
-          ];
-        };
       };
     };
   };

@@ -5,7 +5,7 @@
       direnv
       git
       just
-      lsp
+      lsp-common
       nix
       nodejs
       python

@@ -21,13 +21,6 @@
       extensions = [
         # Themes
         "catppuccin"
-
-        # Languages
-        "nix"
-        "lua"
-        "toml"
-        "kdl"
-        "python"
       ];
     };
   };
