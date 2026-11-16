@@ -1,15 +1,10 @@
 { inputs, config, ... }:
 let
-  hosts = {
-    rosetta.system = "x86_64-linux";
-  };
-
   mkHost =
     name:
-    { system }:
+    { system, user }:
     let
       host = { inherit name system; };
-      inherit (config.flake) user;
     in
     inputs.nixpkgs.lib.nixosSystem {
       inherit system;
@@ -35,5 +30,5 @@ let
     };
 in
 {
-  flake.nixosConfigurations = builtins.mapAttrs (name: cfg: mkHost name cfg) hosts;
+  flake.nixosConfigurations = builtins.mapAttrs (name: cfg: mkHost name cfg) (import ./_hosts.nix);
 }
