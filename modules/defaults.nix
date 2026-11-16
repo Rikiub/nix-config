@@ -9,7 +9,7 @@
         flake-scope # Expose `lib`, `inputs` and `den` on args
       ])
       ++ (with den.aspects; [
-        flatpak # Any host can declare flatpak packages
+        flatpak # Any aspect can declare flatpak packages
         xdg # Ensure packages follow XDG specs
       ]);
 

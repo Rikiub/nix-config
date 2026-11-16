@@ -30,9 +30,5 @@
           };
         };
       };
-
-    homeManager = { ... }: {
-      programs.opencode.enable = true;
-    };
   };
 }
