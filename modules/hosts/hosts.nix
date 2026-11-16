@@ -18,6 +18,7 @@ let
       modules = [
         config.flake.modules.nixos.defaults
         config.flake.modules.nixos.${name}
+
         inputs.home-manager.nixosModules.home-manager
         {
           home-manager = {

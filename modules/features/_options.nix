@@ -1,6 +1,6 @@
 { lib, ... }:
 {
-  options.flake = {
+  options = {
     host = lib.mkOption {
       type = lib.types.submodule {
         options = {
