@@ -6,10 +6,11 @@
         options = {
           name = lib.mkOption {
             type = lib.types.str;
+            description = "Name of the current host.";
           };
           system = lib.mkOption {
             type = lib.types.str;
-            default = "x86_64-linux";
+            description = "System arch of the current host.";
           };
         };
       };
@@ -21,14 +22,17 @@
           name = lib.mkOption {
             type = lib.types.str;
             default = "rikiub";
+            description = "Username of the current user.";
           };
           label = lib.mkOption {
             type = lib.types.str;
             default = "Rikiub";
+            description = "Friendly display of the current user.";
           };
           email = lib.mkOption {
             type = lib.types.str;
             default = "rikiub.dev@gmail.com";
+            description = "Email used for git commits.";
           };
         };
       };
