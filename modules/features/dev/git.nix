@@ -26,10 +26,15 @@
         enable = true;
         enableNushellIntegration = true;
       };
-    };
 
-    home.packages = with pkgs; [
-      gh # GitHub CLI
-    ];
+      # GitHub CLI
+      gh = {
+        enable = true;
+        settings = {
+          git_protocol = "ssh";
+          prompt = "enabled";
+        };
+      };
+    };
   };
 }
