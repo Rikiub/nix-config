@@ -1,13 +1,7 @@
 {
-  den.aspects.jujutsu.homeManager = { user, ... }: {
+  den.aspects.jujutsu.homeManager = { ... }: {
     programs.jujutsu = {
       enable = true;
-      settings = {
-        user = {
-          name = user.name or null;
-          email = user.email or null;
-        };
-      };
     };
   };
 }

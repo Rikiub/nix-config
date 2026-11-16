@@ -1,15 +1,9 @@
 {
-  den.aspects.git.homeManager = { user, ... }: {
+  den.aspects.git.homeManager = { ... }: {
     programs = {
       git = {
         enable = true;
         settings = {
-          # Identity is opt-in: users can define it in their own aspect.
-          user = {
-            name = user.name;
-            email = "rikiub.dev@gmail.com";
-          };
-
           init.defaultBranch = "main";
           pull.rebase = true;
           push.autoSetupRemote = true;
