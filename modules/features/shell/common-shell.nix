@@ -1,5 +1,5 @@
 {
-  flake.aspects.apps-shell.homeManager = { pkgs, ... }: {
+  flake.aspects.common-shell.homeManager = { pkgs, ... }: {
     home.packages = with pkgs; [
       trash-cli # Trash Manager
       tre-command # Tree
@@ -13,6 +13,16 @@
 
       # Explorers
       ripgrep.enable = true;
+      yazi = {
+        enable = true;
+        enableNushellIntegration = true;
+      };
+
+      # TL;DR
+      tealdeer = {
+        enable = true;
+        enableAutoUpdates = true;
+      };
     };
   };
 }

@@ -2,12 +2,10 @@
   flake.aspects = { aspects, ... }: {
     shell = {
       includes = with aspects; [
-        apps-shell
-        bat
+        common-shell
         clipboard-shell
         fresh-editor
-        tldr
-        yazi
+        bat
         nx
         nushell # Interactive Shell
       ];
