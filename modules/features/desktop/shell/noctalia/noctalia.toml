@@ -4,23 +4,12 @@ tint_intensity = 0.099999997764825821
 
 [bar.default]
 capsule = true
-center = ["clock", "group:g1"]
+center = ["clock", "media"]
 end = ["tray", "notifications", "group:g2", "session"]
 reserve_space = false
 smart_auto_hide = true
 start = ["workspaces"]
 widget_spacing = 10
-
-[[bar.default.capsule_group]]
-accordion = false
-accordion_direction = "end"
-border_width = 1.0
-enabled = true
-fill = "surface_container"
-id = "g1"
-members = ["media", "audio_visualizer"]
-opacity = 1.0
-padding = 6.0
 
 [[bar.default.capsule_group]]
 accordion = false
@@ -57,8 +46,20 @@ type = "nightlight"
 [[control_center.shortcuts]]
 type = "noctalia/screen_recorder:toggle"
 
+[desktop_widgets]
+enabled = false
+schema_version = 2
+widget_order = []
+
+[desktop_widgets.grid]
+cell_size = 16
+major_interval = 4
+visible = true
+
+[desktop_widgets.widget]
+
 [dock]
-enabled = true
+enabled = false
 launcher_position = "start"
 reserve_space = false
 smart_auto_hide = true
@@ -126,9 +127,9 @@ show_weather = true
 box_height = 196.0
 box_width = 810.0
 cx = 469.99996948242188
-cy = 925.15802001953125
+cy = 960.33197021484375
 output = "winit"
-placement_height = 1131.0
+placement_height = 1174.0
 placement_width = 940.0
 rotation = 0.0
 type = "login_box"
@@ -198,13 +199,13 @@ builtin_ids = ["gtk3", "gtk4", "kcolorscheme", "niri", "qt"]
 directory = "/home/rikiub/Imagenes/Personal/Wallpapers"
 
 [wallpaper.default]
-path = "/home/rikiub/Imagenes/Personal/Wallpapers/jei-lee-YTV-GHH9VpQ-unsplash.png"
+path = "/home/rikiub/Imagenes/Personal/Wallpapers/camille-orgel-LFUENr5bh1A-unsplash.jpg"
 
 [wallpaper.last]
-path = "/home/rikiub/Imagenes/Personal/Wallpapers/jei-lee-YTV-GHH9VpQ-unsplash.png"
+path = "/home/rikiub/Imagenes/Personal/Wallpapers/camille-orgel-LFUENr5bh1A-unsplash.jpg"
 
 [wallpaper.monitors.eDP-1]
-path = "/home/rikiub/Imagenes/Personal/Wallpapers/wallhaven-lyjkxr.png"
+path = "/home/rikiub/Imagenes/Personal/Wallpapers/camille-orgel-LFUENr5bh1A-unsplash.jpg"
 
 [weather]
 enabled = false
@@ -229,6 +230,7 @@ format = "{:%I:%M %P}"
 
 [widget.media]
 hide_when_no_media = true
+show_progress = true
 
 [widget.network]
 show_label = false
