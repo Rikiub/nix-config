@@ -1,5 +1,10 @@
 {
   flake.aspects.zed-editor.homeManager = { ... }: {
+    # Set as default
+    home.sessionVariables = {
+      VISUAL = "zeditor";
+    };
+
     programs.zed-editor = {
       enable = true;
 

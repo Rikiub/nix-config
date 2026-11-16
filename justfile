@@ -9,7 +9,7 @@ switch host="":
     @just sync
     nh os switch .#{{ host }}
 
-[doc("Build and activate a specified NixOS flake configuration specialisation")]
+[doc("Build and activate a specified NixOS flake configuration")]
 [group("nix")]
 test host="":
     @just sync
@@ -20,11 +20,11 @@ test host="":
 rollback:
     nh os rollback .
 
-[doc("Update flake inputs and tools in the system")]
+[doc("Update flake inputs and CLI tools with topgrade")]
 [group("nix")]
-update:
+update *args:
     @just sync
-    topgrade
+    -topgrade {{ args }}
 
 [doc("Sync flake inputs")]
 [group("nix")]
