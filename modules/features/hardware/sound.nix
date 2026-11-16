@@ -1,5 +1,5 @@
 {
-  flake.aspects.sound.nixos = { ... }: {
+  den.aspects.sound.nixos = { ... }: {
     # Enable sound with pipewire.
     services.pulseaudio.enable = false;
 

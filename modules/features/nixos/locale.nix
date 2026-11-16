@@ -1,5 +1,5 @@
 {
-  flake.aspects.locale.nixos = { ... }: {
+  den.aspects.locale.nixos = { ... }: {
     # Set your time zone.
     time.timeZone = "America/Caracas";
 

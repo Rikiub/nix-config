@@ -1,5 +1,5 @@
 {
-  flake.aspects.nvidia.nixos = { pkgs, ... }: {
+  den.aspects.nvidia.nixos = { pkgs, ... }: {
     environment.systemPackages = with pkgs; [ nvtopPackages.nvidia ];
 
     # Add CUDA cache

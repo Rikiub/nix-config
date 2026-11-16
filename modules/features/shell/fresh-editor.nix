@@ -1,5 +1,5 @@
 {
-  flake.aspects.fresh-editor.homeManager = { ... }: {
+  den.aspects.fresh-editor.homeManager = { ... }: {
     # Set as default
     home.sessionVariables = {
       EDITOR = "fresh";
@@ -11,17 +11,6 @@
 
       settings = {
         theme = "dracula";
-
-        lsp = {
-          python = [
-            {
-              enabled = true;
-              auto_start = true;
-              command = "ty";
-              args = [ "server" ];
-            }
-          ];
-        };
       };
     };
   };

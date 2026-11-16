@@ -1,5 +1,5 @@
 {
-  flake.aspects.system-shell.nixos = { pkgs, ... }: {
+  den.aspects.system-shell.nixos = { pkgs, ... }: {
     environment = {
       # Add ~/.local/bin to PATH.
       localBinInPath = true;

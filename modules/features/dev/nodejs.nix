@@ -1,5 +1,5 @@
 {
-  flake.aspects.nodejs.homeManager = { pkgs, ... }: {
+  den.aspects.nodejs.homeManager = { pkgs, ... }: {
     home.packages = with pkgs; [ nodejs ];
 
     # Package Managers

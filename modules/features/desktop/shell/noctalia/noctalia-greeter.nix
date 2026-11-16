@@ -1,5 +1,5 @@
 {
-  flake.aspects.noctalia-greeter = {
+  den.aspects.noctalia-greeter = {
     nixos = { user, ... }: {
       services.displayManager = {
         autoLogin = {

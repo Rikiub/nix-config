@@ -1,15 +1,14 @@
+{ den, ... }:
 {
-  flake.aspects = { aspects, ... }: {
-    gaming-extras = {
-      includes = with aspects; [ mangohud ];
+  den.aspects.gaming-extras = {
+    includes = with den.aspects; [ mangohud ];
 
-      nixos = { ... }: {
-        programs = {
-          gamemode.enable = true;
-          gamescope.enable = true;
-        };
+    nixos = { ... }: {
+      programs = {
+        gamemode.enable = true;
+        gamescope.enable = true;
       };
-      homeManager = { ... }: { };
     };
+    homeManager = { ... }: { };
   };
 }

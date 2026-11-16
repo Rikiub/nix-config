@@ -1,17 +1,17 @@
 {
   "nodes": {
-    "flake-aspects": {
+    "den": {
       "locked": {
-        "lastModified": 1788209328,
-        "narHash": "sha256-LTU8Ea+VbDtPtOFOAufZHe+cW1ISdEt96Au0+cIUZ4Y=",
+        "lastModified": 1794601813,
+        "narHash": "sha256-DM6BxRr3nR2DjkLQetoi3LGlOIIj0lSV2+1LFyImFYE=",
         "owner": "denful",
-        "repo": "flake-aspects",
-        "rev": "e5bbf7be955e8289d545c783673808b18d48c780",
+        "repo": "den",
+        "rev": "9bdfbc2123a96c1a96ffd2e76241d321741e0dc8",
         "type": "github"
       },
       "original": {
         "owner": "denful",
-        "repo": "flake-aspects",
+        "repo": "den",
         "type": "github"
       }
     },
@@ -32,9 +32,7 @@
     },
     "flake-parts": {
       "inputs": {
-        "nixpkgs-lib": [
-          "nixpkgs"
-        ]
+        "nixpkgs-lib": ["nixpkgs"]
       },
       "locked": {
         "lastModified": 1793576659,
@@ -52,9 +50,7 @@
     },
     "home-manager": {
       "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
+        "nixpkgs": ["nixpkgs"]
       },
       "locked": {
         "lastModified": 1794715309,
@@ -102,9 +98,7 @@
     },
     "nixos-hardware": {
       "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
+        "nixpkgs": ["nixpkgs"]
       },
       "locked": {
         "lastModified": 1794597451,
@@ -138,7 +132,7 @@
     },
     "root": {
       "inputs": {
-        "flake-aspects": "flake-aspects",
+        "den": "den",
         "flake-file": "flake-file",
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
@@ -146,9 +140,7 @@
         "nix-flatpak": "nix-flatpak",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-lib": [
-          "nixpkgs"
-        ]
+        "nixpkgs-lib": ["nixpkgs"]
       }
     }
   },

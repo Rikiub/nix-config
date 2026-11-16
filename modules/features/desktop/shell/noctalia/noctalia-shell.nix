@@ -1,5 +1,5 @@
 {
-  flake.aspects.noctalia-shell = {
+  den.aspects.noctalia-shell = {
     nixos = { ... }: {
       programs = {
         noctalia = {

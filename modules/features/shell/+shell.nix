@@ -1,17 +1,17 @@
+{ den, ... }:
 {
-  flake.aspects = { aspects, ... }: {
-    shell = {
-      includes = with aspects; [
-        common-shell
-        clipboard-shell
-        fresh-editor
-        bat
-        nx
-        nushell # Interactive Shell
-      ];
+  den.aspects.shell = {
+    includes = with den.aspects; [
+      common-shell
+      clipboard-shell
+      fresh-editor
+      bat
+      nx
+      opencode
+      nushell # Interactive Shell
+    ];
 
-      nixos = { };
-      homeManager = { };
-    };
+    nixos = { };
+    homeManager = { };
   };
 }

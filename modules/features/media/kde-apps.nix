@@ -1,7 +1,8 @@
+{ den, ... }:
 {
-  flake.aspects = { aspects, ... }: {
+  den.aspects = {
     kde-apps = {
-      includes = with aspects; [ dolphin ];
+      includes = with den.aspects; [ dolphin ];
 
       nixos = { ... }: {
         programs.partition-manager.enable = true; # KDE Partition Manager

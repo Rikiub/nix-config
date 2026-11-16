@@ -1,5 +1,5 @@
 {
-  flake.aspects.ollama = {
+  den.aspects.ollama = {
     nixos =
       {
         pkgs,
@@ -30,9 +30,5 @@
           };
         };
       };
-
-    homeManager = { ... }: {
-      programs.opencode.enable = true;
-    };
   };
 }

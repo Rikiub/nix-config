@@ -1,12 +1,12 @@
 {
-  flake.aspects.xdg = {
+  den.aspects.xdg = {
     nixos = { ... }: {
       nix.settings.use-xdg-base-directories = true;
     };
 
     homeManager = { config, ... }: {
       home.preferXdgDirectories = true;
-      xdg.mimeApps.enable = true; # Allow features set default apps
+      xdg.mimeApps.enable = true; # Allow `features` to set default apps
 
       home.sessionVariables = {
         _JAVA_OPTIONS = "-Djava.util.prefs.userRoot=${config.xdg.configHome}/java";

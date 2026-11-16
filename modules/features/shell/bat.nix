@@ -1,5 +1,5 @@
 {
-  flake.aspects.bat.homeManager = { ... }: {
+  den.aspects.bat.homeManager = { ... }: {
     # Enable bat
     programs.bat.enable = true;
 

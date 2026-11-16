@@ -1,5 +1,5 @@
 {
-  flake.aspects.rosetta.nixos = { ... }: {
+  den.aspects.rosetta.nixos = { ... }: {
     fileSystems = {
       # Data Partition
       "/media/Datos" = {

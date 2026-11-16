@@ -1,5 +1,5 @@
 {
-  flake.aspects.clean.nixos = { ... }: {
+  den.aspects.clean.nixos = { ... }: {
     programs.nh = {
       enable = true;
       clean = {

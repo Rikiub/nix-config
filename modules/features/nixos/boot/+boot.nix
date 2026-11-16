@@ -1,12 +1,11 @@
+{ den, ... }:
 {
-  flake.aspects = { aspects, ... }: {
-    boot = {
-      includes = with aspects; [
-        limine
-        plymouth
-      ];
+  den.aspects.boot = {
+    includes = with den.aspects; [
+      limine
+      plymouth
+    ];
 
-      nixos = { };
-    };
+    nixos = { };
   };
 }

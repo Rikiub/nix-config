@@ -16,16 +16,15 @@
     };
 
     # Core
-    flake-parts = {
-      url = "github:hercules-ci/flake-parts";
-      inputs.nixpkgs-lib.follows = "nixpkgs";
-    };
-    flake-aspects.url = "github:denful/flake-aspects";
-    import-tree.url = "github:denful/import-tree";
+    den.url = "github:denful/den";
   };
 
   imports = with inputs; [
-    flake-file.flakeModules.dendritic
-    flake-aspects.flakeModule
+    (flake-file.flakeModules.dendritic or { })
+    (flake-parts.flakeModules.debug or { })
+    (den.flakeModule or { })
   ];
+
+  # Enable flake-parts debug for LSP
+  debug = true;
 }

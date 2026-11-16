@@ -1,14 +1,9 @@
 {
-  flake.aspects.git.homeManager = { user, ... }: {
+  den.aspects.git.homeManager = { ... }: {
     programs = {
       git = {
         enable = true;
         settings = {
-          user = {
-            name = user.name;
-            email = user.email;
-          };
-
           init.defaultBranch = "main";
           pull.rebase = true;
           push.autoSetupRemote = true;

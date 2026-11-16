@@ -1,5 +1,5 @@
 {
-  flake.aspects.vm.nixos = { user, ... }: {
+  den.aspects.vm.nixos = { user, ... }: {
     virtualisation.vmVariant = {
       virtualisation = {
         memorySize = 4096; # 4 GiB of RAM

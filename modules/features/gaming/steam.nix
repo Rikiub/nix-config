@@ -1,5 +1,5 @@
 {
-  flake.aspects.steam.nixos = { ... }: {
+  den.aspects.steam.nixos = { ... }: {
     programs.steam.enable = true;
   };
 }

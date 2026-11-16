@@ -1,5 +1,5 @@
 {
-  flake.aspects.nushell.homeManager = { ... }: {
+  den.aspects.nushell.homeManager = { ... }: {
     programs = {
       nushell = {
         enable = true;
