@@ -1,11 +1,11 @@
 {
-  flake.aspects.jujutsu.homeManager = { user, ... }: {
+  den.aspects.jujutsu.homeManager = { user, ... }: {
     programs.jujutsu = {
       enable = true;
       settings = {
         user = {
-          name = user.name;
-          email = user.email;
+          name = user.name or null;
+          email = user.email or null;
         };
       };
     };

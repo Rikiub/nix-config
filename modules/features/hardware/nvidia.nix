@@ -1,5 +1,5 @@
 {
-  flake.aspects.nvidia = {
+  den.aspects.nvidia = {
     homeManager = { pkgs, ... }: {
       home.packages = with pkgs; [ nvtopPackages.nvidia ];
     };

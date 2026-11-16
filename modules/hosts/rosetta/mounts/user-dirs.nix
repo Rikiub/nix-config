@@ -1,5 +1,5 @@
 {
-  flake.aspects.rosetta.homeManager =
+  den.aspects.rosetta.homeManager =
     { config, lib, ... }:
     let
       # Config

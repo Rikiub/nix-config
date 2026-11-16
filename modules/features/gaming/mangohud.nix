@@ -1,5 +1,5 @@
 {
-  flake.aspects.mangohud.homeManager = { ... }: {
+  den.aspects.mangohud.homeManager = { ... }: {
     programs.mangohud = {
       enable = true;
       settings = {

@@ -1,6 +1,5 @@
 {
-
-  flake.aspects.rosetta.homeManager = { config, ... }: {
+  den.aspects.rosetta.homeManager = { config, ... }: {
     # Obsidian Settings
     programs.obsidian.vaults = {
       "Obsidian".target = "Documentos/Obsidian";

@@ -1,5 +1,5 @@
 {
-  flake.aspects.xdg = {
+  den.aspects.xdg = {
     nixos = { ... }: {
       nix.settings.use-xdg-base-directories = true;
     };

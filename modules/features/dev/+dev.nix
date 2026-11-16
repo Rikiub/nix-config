@@ -1,18 +1,17 @@
+{ den, ... }:
 {
-  flake.aspects = { aspects, ... }: {
-    dev = {
-      includes = with aspects; [
-        direnv
-        git
-        just
-        lsp
-        nix
-        nodejs
-        python
-      ];
+  den.aspects.dev = {
+    includes = with den.aspects; [
+      direnv
+      git
+      just
+      lsp
+      nix
+      nodejs
+      python
+    ];
 
-      nixos = { };
-      homeManager = { };
-    };
+    nixos = { };
+    homeManager = { };
   };
 }

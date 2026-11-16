@@ -1,13 +1,12 @@
+{ den, ... }:
 {
-  flake.aspects = { aspects, ... }: {
-    desktop = {
-      includes = with aspects; [
-        niri-desktop
-        gnome-keyring
-      ];
+  den.aspects.desktop = {
+    includes = with den.aspects; [
+      niri-desktop
+      gnome-keyring
+    ];
 
-      nixos = { };
-      homeManager = { };
-    };
+    nixos = { };
+    homeManager = { };
   };
 }

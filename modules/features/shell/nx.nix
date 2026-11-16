@@ -1,5 +1,5 @@
 {
-  flake.aspects.nx.homeManager =
+  den.aspects.nx.homeManager =
     { pkgs, config, ... }:
     let
       flakeDir = "${config.xdg.configHome}/nixos";

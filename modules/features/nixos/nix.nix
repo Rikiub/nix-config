@@ -1,5 +1,5 @@
 {
-  flake.aspects.nix.nixos = { host, ... }: {
+  den.aspects.nix.nixos = { host, ... }: {
     # Metadata
     system.nixos.label = "NixOS";
     networking.hostName = host.name;

@@ -1,5 +1,5 @@
 {
-  flake.aspects.easyeffects = {
+  den.aspects.easyeffects = {
     nixos = { ... }: {
       programs.dconf.enable = true;
     };

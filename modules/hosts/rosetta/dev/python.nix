@@ -1,5 +1,5 @@
 {
-  flake.aspects.rosetta.homeManager = { ... }: {
+  den.aspects.rosetta.homeManager = { ... }: {
     programs.uv.settings = {
       cache-dir = "/media/Datos/.uv-cache";
     };

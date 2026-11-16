@@ -1,5 +1,5 @@
 {
-  flake.aspects.battery.nixos = { lib, ... }: {
+  den.aspects.battery.nixos = { lib, ... }: {
     services = {
       # Suspend on lid close
       logind.settings.Login = {

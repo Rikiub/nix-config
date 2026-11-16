@@ -3,7 +3,7 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
-  flake.aspects.flatpak = {
+  den.aspects.flatpak = {
     nixos = { inputs, ... }: {
       imports = [
         inputs.nix-flatpak.nixosModules.nix-flatpak

@@ -1,5 +1,5 @@
 {
-  flake.aspects.ghostty.homeManager = { ... }: {
+  den.aspects.ghostty.homeManager = { ... }: {
     programs.ghostty = {
       enable = true;
       settings = {

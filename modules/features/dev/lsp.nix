@@ -1,5 +1,5 @@
 {
-  flake.aspects.lsp.homeManager = { pkgs, ... }: {
+  den.aspects.lsp.homeManager = { pkgs, ... }: {
     home.packages = with pkgs; [
       bash-language-server # Bash
       ty # Python

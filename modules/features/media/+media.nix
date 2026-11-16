@@ -1,17 +1,16 @@
+{ den, ... }:
 {
-  flake.aspects = { aspects, ... }: {
-    media = {
-      includes = with aspects; [
-        kde-apps
-        obsidian
-        ghostty
-        firefox
-        discord
-        zed-editor
-      ];
+  den.aspects.media = {
+    includes = with den.aspects; [
+      kde-apps
+      obsidian
+      ghostty
+      firefox
+      discord
+      zed-editor
+    ];
 
-      nixos = { };
-      homeManager = { };
-    };
+    nixos = { };
+    homeManager = { };
   };
 }

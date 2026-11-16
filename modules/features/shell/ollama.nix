@@ -1,5 +1,5 @@
 {
-  flake.aspects.ollama = {
+  den.aspects.ollama = {
     nixos =
       {
         pkgs,

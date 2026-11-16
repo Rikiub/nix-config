@@ -1,5 +1,5 @@
 {
-  flake.aspects.fresh-editor = {
+  den.aspects.fresh-editor = {
     homeManager = { ... }: {
       # Set as default
       home.sessionVariables = {

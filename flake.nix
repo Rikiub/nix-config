@@ -5,7 +5,6 @@
 
   inputs = {
     den.url = "github:denful/den";
-    flake-aspects.url = "github:denful/flake-aspects";
     flake-file.url = "github:denful/flake-file";
     flake-parts = {
       url = "github:hercules-ci/flake-parts";

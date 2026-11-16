@@ -1,23 +1,23 @@
-# This module must be imported in all hosts.
-
+{ den, lib, ... }:
 {
-  flake.aspects = { aspects, ... }: {
-    defaults = {
-      includes = with aspects; [
-        flatpak
-        xdg
-      ];
+  den.default = {
+    includes = with den.aspects; [
+      flatpak
+      xdg
+    ];
 
-      nixos = { ... }: {
-        system.stateVersion = "26.11";
-      };
+    nixos = { ... }: {
+      system.stateVersion = "26.11";
+    };
 
-      homeManager = { pkgs, ... }: {
-        home.stateVersion = "26.11";
+    homeManager = { pkgs, ... }: {
+      home.stateVersion = "26.11";
 
-        # Avoid errors for existing dotfiles
-        home.backupCommand = "${pkgs.trash-cli}/bin/trash";
-      };
+      # Avoid errors for existing dotfiles
+      home.backupCommand = "${pkgs.trash-cli}/bin/trash";
     };
   };
+
+  # enable hm by default
+  den.schema.user.classes = lib.mkDefault [ "homeManager" ];
 }

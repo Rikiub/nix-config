@@ -1,15 +1,14 @@
+{ den, ... }:
 {
-  flake.aspects = { aspects, ... }: {
-    gaming = {
-      includes = with aspects; [
-        gaming-extras
+  den.aspects.gaming = {
+    includes = with den.aspects; [
+      gaming-extras
 
-        heroic
-        steam
-      ];
+      heroic
+      steam
+    ];
 
-      nixos = { };
-      homeManager = { };
-    };
+    nixos = { };
+    homeManager = { };
   };
 }
