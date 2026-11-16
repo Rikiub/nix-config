@@ -22,10 +22,12 @@
     };
     flake-aspects.url = "github:denful/flake-aspects";
     import-tree.url = "github:denful/import-tree";
+    den.url = "github:denful/den";
   };
 
   imports = with inputs; [
     flake-file.flakeModules.dendritic
     flake-aspects.flakeModule
+    den.flakeModule
   ];
 }

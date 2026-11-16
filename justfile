@@ -59,6 +59,11 @@ repl:
 open app=env("EDITOR", ""):
     @{{ app }} .
 
+[doc("Print flake directory")]
+[group("interactive")]
+pwd:
+    @pwd
+
 [doc("Build and run NixOS VM image of current host")]
 [group("interactive")]
 vm:
