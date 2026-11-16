@@ -7,6 +7,7 @@
       fresh-editor
       bat
       nx
+      opencode
       nushell # Interactive Shell
     ];
 
