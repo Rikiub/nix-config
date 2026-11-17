@@ -1,11 +1,8 @@
-{ den, ... }:
 {
-  den.aspects.boot = {
+  den.aspects.boot = { den, ... }: {
     includes = with den.aspects; [
       limine
       plymouth
     ];
-
-    nixos = { };
   };
 }

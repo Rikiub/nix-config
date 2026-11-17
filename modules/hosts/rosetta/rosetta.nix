@@ -1,21 +1,15 @@
-{ den, ... }:
 {
-  den.aspects = {
-    rosetta = {
-      includes = with den.aspects; [
-        # System
-        nixos
+  den.aspects.rosetta = { den, ... }: {
+    includes = with den.aspects; [
+      # System
+      nixos
 
-        # User
-        desktop
-        shell
-        dev
-        media
-        gaming
-      ];
-
-      nixos = { };
-      homeManager = { };
-    };
+      # User
+      desktop
+      shell
+      dev
+      media
+      gaming
+    ];
   };
 }

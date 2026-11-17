@@ -10,7 +10,7 @@
       "text/markdown" = "md.obsidian.Obsidian.desktop";
     };
 
-    # Opencode Integration
+    # OpenCode Integration
     programs.opencode.skills = {
       obsidian = pkgs.fetchFromGitHub {
         owner = "obsidianmd";

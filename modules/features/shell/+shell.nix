@@ -10,8 +10,5 @@
       opencode
       nushell # Interactive Shell
     ];
-
-    nixos = { };
-    homeManager = { };
   };
 }

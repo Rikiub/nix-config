@@ -1,6 +1,5 @@
-{ den, inputs, ... }:
 {
-  den.aspects.rosetta = {
+  den.aspects.rosetta = { den, inputs, ... }: {
     includes = with den.aspects; [
       battery
       bluetooth
@@ -20,7 +19,7 @@
         common-gpu-nvidia
       ];
 
-      # Fix suspend
+      # Fix suspension
       boot.kernelParams = [ "mem_sleep_default=deep" ];
 
       # Nvidia PRIME
@@ -34,6 +33,5 @@
         nvidiaBusId = "PCI:1:0:0";
       };
     };
-    homeManager = { ... }: { };
   };
 }

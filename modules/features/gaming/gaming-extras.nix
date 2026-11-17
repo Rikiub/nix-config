@@ -1,6 +1,5 @@
-{ den, ... }:
 {
-  den.aspects.gaming-extras = {
+  den.aspects.gaming-extras = { den, ... }: {
     includes = with den.aspects; [ mangohud ];
 
     nixos = { ... }: {
@@ -9,6 +8,5 @@
         gamescope.enable = true;
       };
     };
-    homeManager = { ... }: { };
   };
 }

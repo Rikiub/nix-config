@@ -1,7 +1,6 @@
-{ den, ... }:
 {
   den.aspects = {
-    kde-apps = {
+    kde-apps = { den, ... }: {
       includes = with den.aspects; [ dolphin ];
 
       nixos = { ... }: {

@@ -1,6 +1,5 @@
-{ den, ... }:
 {
-  den.aspects.niri-desktop = {
+  den.aspects.niri-desktop = { den, ... }: {
     includes = with den.aspects; [
       noctalia-shell
       noctalia-greeter

@@ -1,6 +1,5 @@
-{ den, ... }:
 {
-  den.aspects.nixos = {
+  den.aspects.nixos = { den, ... }: {
     includes = with den.aspects; [
       # Core
       boot
@@ -17,8 +16,5 @@
       ssh
       sudo
     ];
-
-    nixos = { };
-    homeManager = { };
   };
 }

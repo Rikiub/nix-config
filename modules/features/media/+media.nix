@@ -1,6 +1,5 @@
-{ den, ... }:
 {
-  den.aspects.media = {
+  den.aspects.media = { den, ... }: {
     includes = with den.aspects; [
       kde-apps
       obsidian
@@ -9,8 +8,5 @@
       discord
       zed-editor
     ];
-
-    nixos = { };
-    homeManager = { };
   };
 }

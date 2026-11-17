@@ -1,6 +1,5 @@
-{ den, ... }:
 {
-  den.aspects.dev = {
+  den.aspects.dev = { den, ... }: {
     includes = with den.aspects; [
       direnv
       git
@@ -10,8 +9,5 @@
       nodejs
       python
     ];
-
-    nixos = { };
-    homeManager = { };
   };
 }
