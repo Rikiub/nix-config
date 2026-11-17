@@ -24,22 +24,12 @@
           in
           {
             lsp.nixd.settings = {
-              formatting = {
-                command = [ "nixfmt" ];
-              };
-              nixpkgs = {
-                expr = "import <nixpkgs> { }";
-              };
+              formatting.command = [ "nixfmt" ];
+              nixpkgs.expr = "import <nixpkgs> { }";
               options = {
-                nixos = {
-                  expr = "(builtins.getFlake \"${flakeDir}\").nixosConfigurations.${host.name}.options";
-                };
-                home-manager = {
-                  expr = "(builtins.getFlake \"${flakeDir}\").nixosConfigurations.${host.name}.options.home-manager.users.type.getSubOptions []";
-                };
-                flake-parts = {
-                  expr = "(builtins.getFlake \"${flakeDir}\").debug.options";
-                };
+                nixos.expr = "(builtins.getFlake \"${flakeDir}\").nixosConfigurations.${host.name}.options";
+                home-manager.expr = "(builtins.getFlake \"${flakeDir}\").nixosConfigurations.${host.name}.options.home-manager.users.type.getSubOptions []";
+                flake-parts.expr = "(builtins.getFlake \"${flakeDir}\").debug.options";
               };
             };
           };
