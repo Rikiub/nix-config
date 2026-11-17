@@ -6,9 +6,9 @@
 
       # User
       desktop
+      apps
       shell
       dev
-      media
       gaming
     ];
   };

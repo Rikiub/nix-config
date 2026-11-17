@@ -1,5 +1,5 @@
 {
-  den.aspects.media = { den, ... }: {
+  den.aspects.apps = { den, ... }: {
     includes = with den.aspects; [
       kde-apps
       obsidian
