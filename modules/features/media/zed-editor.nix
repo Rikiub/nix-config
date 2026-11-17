@@ -11,6 +11,7 @@
       mutableUserSettings = true;
       userSettings = {
         format_on_save = "on";
+        project_panel.dock = "left";
         theme = {
           mode = "system";
           light = "Catppuccin Latte";
