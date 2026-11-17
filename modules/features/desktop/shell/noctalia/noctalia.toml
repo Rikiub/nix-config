@@ -180,6 +180,7 @@ pinned = [
     "com.heroicgameslauncher.hgl",
     "firefox.webapp-57c138ad-1251-4f02-bf71-c3e3b6f3e06a",
     "firefox.webapp-06c6a44c-875e-4786-a728-6f01ed3c12c1",
+    "org.kde.elisa",
 ]
 
 [shell.screenshot]
