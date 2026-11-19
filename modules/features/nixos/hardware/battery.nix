@@ -11,6 +11,7 @@
       thermald.enable = true;
 
       # Replace power-profiles with auto-cpufreq
+      # So battery and performance is managed automatically
       power-profiles-daemon.enable = lib.mkForce false;
       auto-cpufreq = {
         enable = true;
@@ -18,7 +19,6 @@
           battery = {
             governor = "powersave";
             turbo = "never";
-
             enforce_platform_profile = true;
           };
           charger = {
