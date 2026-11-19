@@ -12,7 +12,7 @@
 
     # Tools Ecosystem
     home.packages = with pkgs; [
-      defuddle-cli
+      defuddle
     ];
 
     # OpenCode Integration

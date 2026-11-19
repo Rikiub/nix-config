@@ -1,5 +1,5 @@
 {
-  den.aspects.system-shell.nixos = { pkgs, ... }: {
+  den.aspects.default-shell.nixos = { pkgs, ... }: {
     environment = {
       # Add ~/.local/bin to PATH.
       localBinInPath = true;

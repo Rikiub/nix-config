@@ -3,7 +3,7 @@
     includes = with den.aspects; [
       # Core
       boot
-      system-shell
+      default-shell
       clean
       kernel
       locale
