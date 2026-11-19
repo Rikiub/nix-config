@@ -1,5 +1,5 @@
 {
-  den.aspects.vm.nixos = { user, ... }: {
+  den.aspects.vm.nixos = { ... }: {
     virtualisation.vmVariant = {
       virtualisation = {
         memorySize = 4096; # 4 GiB of RAM
@@ -13,11 +13,6 @@
           "-display"
           "gtk,gl=on,grab-on-hover=on"
         ];
-      };
-
-      users.users.${user.name} = {
-        isNormalUser = true;
-        initialPassword = "test"; # Testing Password
       };
     };
   };
