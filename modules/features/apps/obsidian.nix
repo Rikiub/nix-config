@@ -10,6 +10,11 @@
       "text/markdown" = "md.obsidian.Obsidian.desktop";
     };
 
+    # Tools Ecosystem
+    home.packages = with pkgs; [
+      defuddle-cli
+    ];
+
     # OpenCode Integration
     programs.opencode.skills = {
       obsidian = pkgs.fetchFromGitHub {
