@@ -1,33 +1,44 @@
 {
-  den.aspects.git.homeManager = { ... }: {
-    programs = {
-      git = {
-        enable = true;
-        settings = {
-          init.defaultBranch = "main";
-          pull.rebase = true;
-          push.autoSetupRemote = true;
+  den.aspects.git = {
+    provides.rikiub.homeManager = { ... }: {
+      programs.git.settings = {
+        user = {
+          name = "Rikiub";
+          email = "rikiub.dev@gmail.com";
         };
       };
+    };
 
-      # Better diff
-      delta = {
-        enable = true;
-        enableGitIntegration = true;
-      };
+    homeManager = { ... }: {
+      programs = {
+        git = {
+          enable = true;
+          settings = {
+            init.defaultBranch = "main";
+            pull.rebase = true;
+            push.autoSetupRemote = true;
+          };
+        };
 
-      # Convenient TUI
-      lazygit = {
-        enable = true;
-        enableNushellIntegration = true;
-      };
+        # Better diff
+        delta = {
+          enable = true;
+          enableGitIntegration = true;
+        };
 
-      # GitHub CLI
-      gh = {
-        enable = true;
-        settings = {
-          git_protocol = "ssh";
-          prompt = "enabled";
+        # Convenient TUI
+        lazygit = {
+          enable = true;
+          enableNushellIntegration = true;
+        };
+
+        # GitHub CLI
+        gh = {
+          enable = true;
+          settings = {
+            git_protocol = "ssh";
+            prompt = "enabled";
+          };
         };
       };
     };
