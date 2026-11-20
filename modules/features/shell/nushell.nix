@@ -9,10 +9,11 @@
         };
       };
 
-      # cd shortcuts
-      zoxide = {
+      # Prompt
+      starship = {
         enable = true;
         enableNushellIntegration = true;
+        presets = [ "pure-preset" ];
       };
 
       # Completions
@@ -21,11 +22,10 @@
         enableNushellIntegration = true;
       };
 
-      # Prompt
-      starship = {
+      # cd shortcuts
+      zoxide = {
         enable = true;
         enableNushellIntegration = true;
-        presets = [ "pure-preset" ];
       };
     };
   };
