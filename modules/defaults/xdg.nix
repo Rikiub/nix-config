@@ -1,5 +1,6 @@
 {
-  den.aspects.xdg = {
+  # Ensure packages follow XDG specs
+  den.default = {
     nixos = { ... }: {
       nix.settings.use-xdg-base-directories = true;
     };

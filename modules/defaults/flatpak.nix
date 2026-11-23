@@ -3,7 +3,8 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
-  den.aspects.flatpak = {
+  # Any aspect can declare flatpak packages
+  den.default = {
     nixos = { inputs, ... }: {
       imports = [
         inputs.nix-flatpak.nixosModules.nix-flatpak
