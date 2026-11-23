@@ -28,12 +28,18 @@
               flake-parts.expr = "(builtins.getFlake \"${flakeDir}\").debug.options";
             };
           };
+          nil-settings = {
+            flake.autoArchive = true;
+          };
         in
         {
           zed-editor = {
             extensions = [ "nix" ];
             userSettings = {
-              lsp.nixd.settings = nixd-settings;
+              lsp = {
+                nil.settings = nil-settings;
+                nixd.settings = nixd-settings;
+              };
             };
           };
 
@@ -43,6 +49,7 @@
                 enabled = true;
                 auto_start = true;
                 command = "nil";
+                initialization_options = nil-settings;
               }
               {
                 enabled = true;
