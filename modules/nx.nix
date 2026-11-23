@@ -1,5 +1,11 @@
+{ den, ... }:
 {
-  den.aspects.nx.homeManager =
+  # Exposes flake apps under the name of each host / home for building with nh.
+  perSystem = { pkgs, ... }: {
+    packages = den.lib.nh.denPackages { fromFlake = true; } pkgs;
+  };
+
+  den.default.homeManager =
     { pkgs, config, ... }:
     let
       flakeDir = "${config.xdg.configHome}/nixos";

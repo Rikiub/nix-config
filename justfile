@@ -1,46 +1,63 @@
 default:
     @just --list --unsorted
 
-# nix
+is_nixos := `grep -q '^ID=nixos' /etc/os-release && echo true || echo false`
+nh_cmd := if os() == "macos" { "nh darwin" } else if is_nixos == "true" { "nh os" } else { "nh home" }
 
-[doc("Build and switch to a specified NixOS flake configuration")]
-[group("nix")]
+# unix
+
+[doc("Build and activate the new configuration")]
+[group("unix")]
 switch host="":
     @just sync
-    nh os switch .#{{ host }}
-
-[doc("Build and activate a specified NixOS flake configuration")]
-[group("nix")]
-test host="":
-    @just sync
-    nh os test .#{{ host }}
-
-[doc("Rollback to previous generation")]
-[group("nix")]
-rollback:
-    nh os rollback .
+    {{ nh_cmd }} switch .#{{ host }}
 
 [doc("Update flake inputs and external packages with topgrade")]
-[group("nix")]
+[group("unix")]
 update *args:
     @just sync
     -topgrade {{ args }}
 
 [doc("Sync flake inputs")]
-[group("nix")]
+[group("unix")]
+[private]
 sync:
     @git add .
     nix run .#write-flake
 
-[doc("List available generations from profile path")]
-[group("nix")]
-info:
-    nh os info
+[doc("Load configuration in a repl")]
+[group("unix")]
+repl:
+    {{ nh_cmd }} repl .
 
-[doc("Aggressive GC + optimise store")]
-[group("nix")]
+[doc("Collect all garbage and gcroots from the Nix store")]
+[group("unix")]
 clean:
     nh clean all --optimise
+
+# nixos
+
+[doc("Build and activate the new configuration (until next reboot)")]
+[group("nixos")]
+test host="":
+    @just sync
+    nh os test .#{{ host }}
+
+[doc("Rollback to a previous generation")]
+[group("nixos")]
+rollback:
+    nh os rollback .
+
+[doc("Build and run NixOS VM image of current host")]
+[group("nixos")]
+vm:
+    mkdir -p tmp/
+    cd tmp/ && nh os build-vm --run
+
+[doc("List available generations from profile path")]
+[group("nixos")]
+info:
+    nh os info
 
 # interactive
 
@@ -48,11 +65,6 @@ clean:
 [group("interactive")]
 search *args:
     nh search {{ args }}
-
-[doc("Load system in a repl")]
-[group("interactive")]
-repl:
-    nh os repl .
 
 [doc("Open configuration directory on application")]
 [group("interactive")]
@@ -63,12 +75,6 @@ open app=env("EDITOR", ""):
 [group("interactive")]
 pwd:
     @pwd
-
-[doc("Build and run NixOS VM image of current host")]
-[group("interactive")]
-vm:
-    mkdir -p tmp/
-    cd tmp/ && nh os build-vm --run
 
 # git
 

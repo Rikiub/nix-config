@@ -4,7 +4,6 @@
       common-shell
       clipboard-shell
       bat
-      nx
       opencode
       nushell # Interactive Shell
     ];
