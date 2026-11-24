@@ -4,6 +4,7 @@
 {
   flake-file.inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-lib.follows = "nixpkgs";
   };
 
   # Auto follow/deduplicate
