@@ -1,9 +1,6 @@
 {
   flake-file.inputs = {
-    autopair-nu = {
-      url = "github:mst-mkt/autopair.nu";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    autopair-nu.url = "github:mst-mkt/autopair.nu";
   };
 
   den.aspects.nushell.homeManager = { inputs, ... }: {

@@ -8,8 +8,12 @@
       url = "github:mst-mkt/autopair.nu";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    den.url = "github:denful/den";
-    flake-file.url = "github:denful/flake-file";
+    den = {
+      url = "github:denful/den";
+    };
+    flake-file = {
+      url = "github:denful/flake-file";
+    };
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
@@ -18,13 +22,18 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    import-tree.url = "github:denful/import-tree";
-    nix-flatpak.url = "github:gmodena/nix-flatpak";
+    import-tree = {
+      url = "github:denful/import-tree";
+    };
+    nix-flatpak = {
+      url = "github:gmodena/nix-flatpak";
+    };
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-lib.follows = "nixpkgs";
+    nixpkgs = {
+      url = "github:NixOS/nixpkgs/nixos-unstable";
+    };
   };
 }
