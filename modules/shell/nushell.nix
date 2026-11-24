@@ -18,9 +18,6 @@
         };
       };
 
-      # Autopair
-      autopair-nu.enable = true;
-
       # Prompt
       starship = {
         enable = true;
@@ -39,6 +36,9 @@
         enable = true;
         enableNushellIntegration = true;
       };
+
+      # Autopair
+      autopair-nu.enable = true;
     };
   };
 }
