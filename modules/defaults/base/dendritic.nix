@@ -1,4 +1,4 @@
-# Bootstrap base module
+# Den bootstrap module
 
 { inputs, ... }:
 {

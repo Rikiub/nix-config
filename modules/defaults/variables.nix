@@ -1,4 +1,4 @@
-# Shared variables for reuse
+# Shared variables to reuse
 
 {
   den.schema.user = { user, lib, ... }: {

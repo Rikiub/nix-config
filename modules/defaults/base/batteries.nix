@@ -1,4 +1,4 @@
-# Enabled batteries
+# Enabled den batteries
 
 { den, ... }:
 {
