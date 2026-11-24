@@ -10,7 +10,7 @@
     includes = with den.batteries; [ primary-user ];
   };
 
-  # Aspects
+  # Host
   den.aspects.rosetta = { den, ... }: {
     includes = with den.aspects; [
       # System
