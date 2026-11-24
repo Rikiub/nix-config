@@ -1,4 +1,4 @@
-# Global helper for access to flake justfile from anywhere
+# Global helper for access the flake justfile from anywhere
 
 { den, ... }:
 {
