@@ -1,12 +1,7 @@
 {
   den.aspects.default-shell.nixos = { pkgs, ... }: {
-    environment = {
-      # Add ~/.local/bin to PATH.
-      localBinInPath = true;
-
-      # Required for pkexec
-      shells = [ pkgs.nushell ];
-    };
+    # Required for pkexec
+    environment.shells = [ pkgs.nushell ];
 
     # Set Nushell as default from Bash
     programs.nushell.enable = true;

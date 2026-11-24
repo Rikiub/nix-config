@@ -3,7 +3,7 @@
     {
       pkgs,
       host,
-      config,
+      user,
       ...
     }:
     {
@@ -18,14 +18,13 @@
       # Editor Integration
       programs =
         let
-          flakeDir = "${config.xdg.configHome}/nixos";
           nixd-settings = {
             formatting.command = [ "nixfmt" ];
             nixpkgs.expr = "import <nixpkgs> { }";
             options = {
-              nixos.expr = "(builtins.getFlake \"${flakeDir}\").nixosConfigurations.${host.name}.options";
-              home-manager.expr = "(builtins.getFlake \"${flakeDir}\").nixosConfigurations.${host.name}.options.home-manager.users.type.getSubOptions []";
-              flake-parts.expr = "(builtins.getFlake \"${flakeDir}\").debug.options";
+              nixos.expr = "(builtins.getFlake \"${user.flakeDirectory}\").nixosConfigurations.${host.name}.options";
+              home-manager.expr = "(builtins.getFlake \"${user.flakeDirectory}\").nixosConfigurations.${host.name}.options.home-manager.users.type.getSubOptions []";
+              flake-parts.expr = "(builtins.getFlake \"${user.flakeDirectory}\").debug.options";
             };
           };
           nil-settings = {

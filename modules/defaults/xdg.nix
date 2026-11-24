@@ -6,20 +6,27 @@
     };
 
     homeManager = { config, ... }: {
-      home.preferXdgDirectories = true;
-      xdg.mimeApps.enable = true; # Allow `features` to set default apps
+      xdg = {
+        enable = true; # Enable XDG base directories
+        localBinInPath = true; # Add ~/.local/bin to PATH.
+        mimeApps.enable = true; # Allow aspects to set default apps
+      };
 
-      home.sessionVariables = {
-        _JAVA_OPTIONS = "-Djava.util.prefs.userRoot=${config.xdg.configHome}/java";
+      # Force common apps to follow XDG base directories
+      home = {
+        preferXdgDirectories = true;
+        sessionVariables = {
+          _JAVA_OPTIONS = "-Djava.util.prefs.userRoot=${config.xdg.configHome}/java";
 
-        GOPATH = "${config.xdg.dataHome}/go";
-        CARGO_HOME = "${config.xdg.dataHome}/cargo";
-        RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
-        GNUPGHOME = "${config.xdg.dataHome}/gnupg";
+          GOPATH = "${config.xdg.dataHome}/go";
+          CARGO_HOME = "${config.xdg.dataHome}/cargo";
+          RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
+          GNUPGHOME = "${config.xdg.dataHome}/gnupg";
 
-        npm_config_cache = "${config.xdg.cacheHome}/npm";
-        HISTFILE = "${config.xdg.cacheHome}/bash/history";
-        PYTHONPYCACHEPREFIX = "${config.xdg.cacheHome}/cpython";
+          npm_config_cache = "${config.xdg.cacheHome}/npm";
+          HISTFILE = "${config.xdg.cacheHome}/bash/history";
+          PYTHONPYCACHEPREFIX = "${config.xdg.cacheHome}/cpython";
+        };
       };
     };
   };
