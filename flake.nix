@@ -4,6 +4,10 @@
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 
   inputs = {
+    autopair-nu = {
+      url = "github:mst-mkt/autopair.nu";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     den.url = "github:denful/den";
     flake-file.url = "github:denful/flake-file";
     flake-parts = {

@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "autopair-nu": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1793009264,
+        "narHash": "sha256-cQwvSn+0wGvtHtPlJ5zSiafdVGKMTr1zSZaZGCwCEdk=",
+        "owner": "mst-mkt",
+        "repo": "autopair.nu",
+        "rev": "67d6e0e30d4633ff92ace806e9d33d675d2b76c0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mst-mkt",
+        "repo": "autopair.nu",
+        "type": "github"
+      }
+    },
     "den": {
       "locked": {
         "lastModified": 1795224939,
@@ -138,6 +158,7 @@
     },
     "root": {
       "inputs": {
+        "autopair-nu": "autopair-nu",
         "den": "den",
         "flake-file": "flake-file",
         "flake-parts": "flake-parts",

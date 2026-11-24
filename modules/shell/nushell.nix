@@ -1,5 +1,14 @@
 {
-  den.aspects.nushell.homeManager = { ... }: {
+  flake-file.inputs = {
+    autopair-nu = {
+      url = "github:mst-mkt/autopair.nu";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
+  den.aspects.nushell.homeManager = { inputs, ... }: {
+    imports = [ inputs.autopair-nu.homeModules.default ];
+
     programs = {
       nushell = {
         enable = true;
@@ -8,6 +17,9 @@
           rm.always_trash = true;
         };
       };
+
+      # Autopair
+      autopair-nu.enable = true;
 
       # Prompt
       starship = {
