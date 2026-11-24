@@ -1,3 +1,5 @@
+# Home Manager Configuration
+
 { lib, ... }:
 {
   flake-file.inputs = {
@@ -8,16 +10,16 @@
   };
 
   den.default = {
-    nixos = { ... }: {
-      # Use the system pkgs for home-manager users
-      home-manager.useGlobalPkgs = true;
-    };
-
     homeManager = { pkgs, ... }: {
       home.stateVersion = "26.11";
 
       # Avoid errors for existing dotfiles
       home.backupCommand = "${pkgs.trash-cli}/bin/trash";
+    };
+
+    nixos = { ... }: {
+      # Use the system pkgs for home-manager users
+      home-manager.useGlobalPkgs = true;
     };
   };
 

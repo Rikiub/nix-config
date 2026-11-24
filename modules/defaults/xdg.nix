@@ -1,5 +1,6 @@
+# Force common apps to follow XDG base directories
+
 {
-  # Ensure packages follow XDG specs
   den.default = {
     nixos = { ... }: {
       nix.settings.use-xdg-base-directories = true;
@@ -12,7 +13,6 @@
         mimeApps.enable = true; # Allow aspects to set default apps
       };
 
-      # Force common apps to follow XDG base directories
       home = {
         preferXdgDirectories = true;
         sessionVariables = {

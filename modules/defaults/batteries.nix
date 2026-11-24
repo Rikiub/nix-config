@@ -1,3 +1,5 @@
+# Enabled batteries
+
 { den, ... }:
 {
   den.default.includes = (

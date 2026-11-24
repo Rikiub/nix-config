@@ -1,9 +1,10 @@
+# Any aspect can declare flatpak packages
+
 {
   flake-file.inputs = {
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
-  # Any aspect can declare flatpak packages
   den.default = {
     nixos = { inputs, ... }: {
       imports = [

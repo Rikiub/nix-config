@@ -1,3 +1,5 @@
+# NixOS and Nixpkgs Configuration
+
 {
   flake-file.inputs = {
     # Nix Packages

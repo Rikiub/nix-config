@@ -1,3 +1,5 @@
+# Bootstrap base module
+
 { inputs, ... }:
 {
   flake-file.inputs = {
