@@ -6,7 +6,6 @@
   inputs = {
     autopair-nu = {
       url = "github:mst-mkt/autopair.nu";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     den = {
       url = "github:denful/den";
@@ -16,11 +15,9 @@
     };
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
-      inputs.nixpkgs-lib.follows = "nixpkgs";
     };
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     import-tree = {
       url = "github:denful/import-tree";
@@ -30,7 +27,6 @@
     };
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
