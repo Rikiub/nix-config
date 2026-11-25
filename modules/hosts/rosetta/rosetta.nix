@@ -23,7 +23,7 @@ in
       nixos
 
       # User
-      desktop
+      desktop.niri
       apps
       shell
       dev

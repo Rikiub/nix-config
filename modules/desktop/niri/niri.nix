@@ -4,6 +4,7 @@
     includes = with den.aspects; [
       noctalia.shell
       noctalia.greeter
+      gnome-keyring
     ];
 
     nixos = { ... }: {
