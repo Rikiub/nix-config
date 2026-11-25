@@ -14,13 +14,13 @@
       let
         configDir = ./config;
 
-        # List of all files in the directory
+        # List all files in the directory
         includes = lib.concatMapStringsSep "\n" (name: ''include "${configDir}/${name}"'') (
           lib.attrNames (builtins.readDir configDir)
         );
       in
       {
-        # Config
+        # Configuration
         wayland.windowManager.niri = {
           enable = true;
           extraConfig = lib.mkBefore includes;
