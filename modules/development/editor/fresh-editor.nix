@@ -7,8 +7,8 @@
 
     programs.fresh-editor = {
       enable = true;
-      mutableSettings = true;
 
+      mutableSettings = true;
       settings = {
         theme = "dracula";
       };
