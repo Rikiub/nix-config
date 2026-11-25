@@ -9,8 +9,8 @@
     homeManager = { config, ... }: {
       xdg = {
         enable = true; # Enable XDG base directories
-        localBinInPath = true; # Add ~/.local/bin to PATH.
         mimeApps.enable = true; # Allow aspects to set default apps
+        localBinInPath = true; # Add ~/.local/bin to PATH.
       };
 
       home = {
