@@ -1,0 +1,34 @@
+binds {
+    // The following binds move the focused window in and out of a column.
+	// If the window is alone, they will consume it into the nearby column to the side.
+	// If the window is already in a column, they will expel it out.
+	Mod+BracketLeft  { consume-or-expel-window-left; }
+	Mod+BracketRight { consume-or-expel-window-right; }
+
+	// Consume one window from the right to the bottom of the focused column.
+	Mod+Comma  { consume-window-into-column; }
+	// Expel the bottom window from the focused column to the right.
+	Mod+Period { expel-window-from-column; }
+
+	Mod+R { switch-preset-column-width; }
+	Mod+Shift+R { switch-preset-window-height; }
+	Mod+Ctrl+R { reset-window-height; }
+	Mod+F { maximize-column; }
+	Mod+Shift+F { fullscreen-window; }
+	Mod+C { center-column; }
+
+	// Finer width adjustments.
+	// This command can also:
+	// * set width in pixels: "1000"
+	// * adjust width in pixels: "-5" or "+5"
+	// * set width as a percentage of screen width: "25%"
+	// * adjust width as a percentage of screen width: "-10%" or "+10%"
+	// Pixel sizes use logical, or scaled, pixels. I.e. on an output with scale 2.0,
+	// set-column-width "100" will make the column occupy 200 physical screen pixels.
+	Mod+Minus { set-column-width "-10%"; }
+	Mod+Equal { set-column-width "+10%"; }
+
+	// Finer height adjustments when in column with other windows.
+	Mod+Shift+Minus { set-window-height "-10%"; }
+	Mod+Shift+Equal { set-window-height "+10%"; }
+}

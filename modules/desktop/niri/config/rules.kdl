@@ -2,29 +2,6 @@
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
 
-// Blur effect
-blur {
-    passes 5
-    offset 4
-    noise 0.03
-    saturation 1.3
-}
-
-window-rule {
-    match app-id="(?i)(ghostty|zed|discord|nautilus|dolphin|heroic|okular|elisa)"
-    opacity 0.9
-
-    background-effect {
-        blur true
-    }
-}
-
-// Enable rounded corners for all windows.
-window-rule {
-	geometry-corner-radius 12
-	clip-to-geometry true
-}
-
 // Open as floating by default.
 window-rule {
 	match app-id=r#"firefox$"# title="^Picture-in-Picture$"

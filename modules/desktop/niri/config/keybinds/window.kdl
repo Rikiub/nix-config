@@ -1,0 +1,42 @@
+binds {
+    // Close
+    Mod+Q { close-window; }
+
+    // Focus
+	Mod+Left  { focus-column-left; }
+	Mod+Down  { focus-window-down; }
+	Mod+Up    { focus-window-up; }
+	Mod+Right { focus-column-right; }
+
+	Mod+A     { focus-column-left; }
+	Mod+S     { focus-window-down; }
+	Mod+W     { focus-window-up; }
+	Mod+D     { focus-column-right; }
+
+	Mod+H     { focus-column-left; }
+	Mod+J     { focus-window-down; }
+	Mod+K     { focus-window-up; }
+	Mod+L     { focus-column-right; }
+
+	Mod+Home { focus-column-first; }
+	Mod+End  { focus-column-last; }
+
+	// Move
+	Mod+Ctrl+Left  { move-column-left; }
+	Mod+Ctrl+Down  { move-window-down; }
+	Mod+Ctrl+Up    { move-window-up; }
+	Mod+Ctrl+Right { move-column-right; }
+
+	Mod+Ctrl+A     { move-column-left; }
+	Mod+Ctrl+S     { move-window-down; }
+	Mod+Ctrl+W     { move-window-up; }
+	Mod+Ctrl+D     { move-column-right; }
+
+	Mod+Ctrl+H     { move-column-left; }
+	Mod+Ctrl+J     { move-window-down; }
+	Mod+Ctrl+K     { move-window-up; }
+	Mod+Ctrl+L     { move-column-right; }
+
+	Mod+Ctrl+Home { move-column-to-first; }
+	Mod+Ctrl+End  { move-column-to-last; }
+}

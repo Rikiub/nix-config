@@ -1,0 +1,14 @@
+binds {
+    Print { screenshot; }
+	// Ctrl+Print { screenshot-screen; }
+	// Alt+Print { screenshot-window; }
+
+	Mod+F1 { show-hotkey-overlay; }
+
+	// The quit action will show a confirmation dialog to avoid accidental exits.
+	Ctrl+Alt+Delete { quit; }
+
+	// Powers off the monitors. To turn them back on, do any input like
+	// moving the mouse or pressing any other key.
+	Mod+Shift+P { power-off-monitors; }
+}

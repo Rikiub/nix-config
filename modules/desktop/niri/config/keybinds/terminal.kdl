@@ -1,0 +1,6 @@
+binds {
+	Mod+T \
+		cooldown-ms=500 \
+		hotkey-overlay-title="Launch Terminal" \
+		{ spawn "xdg-terminal-exec"; }
+}
