@@ -1,16 +1,14 @@
 {
-  den.aspects.noctalia.greeter = {
-    nixos = { user, ... }: {
-      services.displayManager = {
-        autoLogin = {
-          enable = true;
-          user = user.name;
-        };
+  den.aspects.noctalia.greeter.nixos = { user, ... }: {
+    services.displayManager = {
+      autoLogin = {
+        enable = true;
+        user = user.name;
+      };
 
-        noctalia-greeter = {
-          enable = true;
-          passwordlessSyncUsers = [ user.name ];
-        };
+      noctalia-greeter = {
+        enable = true;
+        passwordlessSyncUsers = [ user.name ];
       };
     };
   };
