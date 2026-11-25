@@ -1,1 +1,1 @@
-Personal NixOS config for my Acer Laptop.
+Personal NixOS configuration for my Acer Laptop.
