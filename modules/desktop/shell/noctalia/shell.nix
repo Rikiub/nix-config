@@ -1,5 +1,8 @@
+{ den, ... }:
 {
-  den.aspects.noctalia-shell = {
+  den.aspects.noctalia.shell = {
+    includes = with den.aspects.noctalia; [ theme ];
+
     nixos = { ... }: {
       programs = {
         noctalia = {
@@ -13,7 +16,7 @@
     homeManager = { ... }: {
       programs.noctalia = {
         enable = true;
-        settings = ./noctalia.toml;
+        settings = ./shell.toml;
       };
     };
   };

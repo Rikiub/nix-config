@@ -1,5 +1,5 @@
 {
-  den.aspects.noctalia-shell.homeManager = { pkgs, ... }: {
+  den.aspects.noctalia.theme.homeManager = { pkgs, ... }: {
     home.pointerCursor = {
       enable = true;
 
