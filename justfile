@@ -78,6 +78,11 @@ pwd:
 
 # git
 
+[doc("Run flake directory git")]
+[group("git")]
+git *args:
+    -@git {{ args }}
+
 [doc("Show status")]
 [group("git")]
 status:
