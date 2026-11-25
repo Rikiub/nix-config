@@ -1,7 +1,7 @@
 {
   den.aspects.desktop = { den, ... }: {
     includes = with den.aspects; [
-      niri-desktop
+      desktop.niri
       gnome-keyring
     ];
   };
