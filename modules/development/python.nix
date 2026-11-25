@@ -1,12 +1,19 @@
+{ den, ... }:
 {
   den.aspects.python = {
-    homeManager = { pkgs, ... }: {
-      # Toolchain
+    includes = with den.aspects.python; [ _ ];
+
+    tools.homeManager = { pkgs, ... }: {
       home.packages = with pkgs; [
         python3 # Python system-wide
-        ty # LSP
       ];
       programs.uv.enable = true; # Python Toolchain
+    };
+
+    editor.homeManager = { pkgs, ... }: {
+      home.packages = with pkgs; [
+        ty # LSP
+      ];
 
       # Editor Integration
       programs = {

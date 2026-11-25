@@ -1,24 +1,24 @@
+{ den, ... }:
 {
-  den.aspects.nix.homeManager =
-    {
-      pkgs,
-      host,
-      user,
-      ...
-    }:
-    {
-      # Toolchain
-      home.packages = with pkgs; [
-        nixd # LSP
-        nil # LSP
-        nixfmt # Nix Formatter
-        statix # Nix Linter
-      ];
+  den.aspects.nix = {
+    includes = with den.aspects.nix; [ _ ];
 
-      # Editor Integration
-      programs =
-        let
-          nixd-settings = {
+    tools.homeManager = { pkgs, ... }: {
+      home.packages = with pkgs; [
+        nix-prefetch-github
+      ];
+    };
+
+    editor.homeManager =
+      {
+        pkgs,
+        host,
+        user,
+        ...
+      }:
+      let
+        lsp = {
+          nixd = {
             formatting.command = [ "nixfmt" ];
             nixpkgs.expr = "import <nixpkgs> { }";
             options = {
@@ -27,17 +27,27 @@
               flake-parts.expr = "(builtins.getFlake \"${user.flakeDirectory}\").debug.options";
             };
           };
-          nil-settings = {
+          nil = {
             flake.autoArchive = true;
           };
-        in
-        {
+        };
+      in
+      {
+        home.packages = with pkgs; [
+          nixd # LSP
+          nil # LSP
+          nixfmt # Nix Formatter
+          statix # Nix Linter
+        ];
+
+        # Editor Integration
+        programs = {
           zed-editor = {
             extensions = [ "nix" ];
             userSettings = {
               lsp = {
-                nil.settings = nil-settings;
-                nixd.settings = nixd-settings;
+                nil.settings = lsp.nil;
+                nixd.settings = lsp.nixd;
               };
             };
           };
@@ -48,16 +58,17 @@
                 enabled = true;
                 auto_start = true;
                 command = "nil";
-                initialization_options = nil-settings;
+                initialization_options = lsp.nil;
               }
               {
                 enabled = true;
                 auto_start = true;
                 command = "nixd";
-                initialization_options = nixd-settings;
+                initialization_options = lsp.nixd;
               }
             ];
           };
         };
-    };
+      };
+  };
 }
