@@ -16,11 +16,7 @@
 
         # List of all files in the directory
         includes = lib.concatMapStringsSep "\n" (name: ''include "${configDir}/${name}"'') (
-          lib.attrNames (
-            lib.filterAttrs (name: type: type == "regular" && lib.hasSuffix ".kdl" name) (
-              builtins.readDir configDir
-            )
-          )
+          lib.attrNames (builtins.readDir configDir)
         );
       in
       {
