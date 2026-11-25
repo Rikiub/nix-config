@@ -16,8 +16,8 @@
         configDir = ./config;
 
         # List all files in the directory
-        includes = lib.concatMapStringsSep "\n" (name: ''include "${configDir}/${name}"'') (
-          lib.attrNames (builtins.readDir configDir)
+        includes = lib.concatMapStringsSep "\n" (f: ''include "${f}"'') (
+          lib.filter (lib.hasSuffix ".kdl") (lib.filesystem.listFilesRecursive configDir)
         );
       in
       {
@@ -27,8 +27,8 @@
           extraConfig = lib.mkBefore includes;
         };
 
-        # Persistent clipboard
-        services.wl-clip-persist.enable = true;
+        xdg.terminal-exec.enable = true; # Required for spawn terminal
+        services.wl-clip-persist.enable = true; # Persistent clipboard
       };
   };
 }
