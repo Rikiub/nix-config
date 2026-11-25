@@ -1,5 +1,5 @@
 {
-  den.aspects.common-shell.homeManager = { pkgs, ... }: {
+  den.aspects.shell.cli.homeManager = { pkgs, ... }: {
     home.packages = with pkgs; [
       trash-cli # Trash Manager
       tre-command # Tree

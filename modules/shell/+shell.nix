@@ -1,8 +1,8 @@
 {
   den.aspects.shell = { den, ... }: {
     includes = with den.aspects; [
-      common-shell
-      clipboard-shell
+      shell.cli
+      shell.clipboard
       bat
       opencode
       nushell # Interactive Shell

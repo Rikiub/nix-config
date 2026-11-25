@@ -1,5 +1,5 @@
 {
-  den.aspects.clipboard-shell.homeManager = { pkgs, ... }: {
+  den.aspects.shell.clipboard.homeManager = { pkgs, ... }: {
     home.packages = with pkgs; [
       clipboard-jh # Cross-platform command
       wl-clipboard # Wayland Support
