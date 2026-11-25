@@ -1,7 +1,7 @@
 {
   den.aspects.gaming = { den, ... }: {
     includes = with den.aspects; [
-      gaming-performance
+      gaming.performance
       heroic
       steam
     ];
