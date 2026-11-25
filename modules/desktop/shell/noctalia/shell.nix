@@ -16,8 +16,13 @@
     homeManager = { ... }: {
       programs.noctalia = {
         enable = true;
-        settings = ./shell.toml;
+        settings = ./config/shell.toml;
       };
+
+      wayland.windowManager.niri.extraConfig = ''
+        include "${./config/niri.kdl}"
+        include optional=true "noctalia.kdl";
+      '';
     };
   };
 }

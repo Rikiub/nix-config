@@ -10,28 +10,25 @@
     };
 
     homeManager =
-      { pkgs, ... }:
+      { lib, ... }:
       let
-        localDir = ./config;
-        configDir =
-          pkgs.runCommand "niri-config-checked"
-            {
-              nativeBuildInputs = [ pkgs.niri ];
-            }
-            ''
-              cp -r ${localDir} $out
-              chmod -R u+w $out
-
-              niri validate --config $out/config.kdl
-            '';
+        configDir = ./config;
       in
       {
         # Config
-        wayland.windowManager.niri.enable = true;
-        xdg.configFile = {
-          "${toString localDir}/modules".source = "${configDir}/modules";
-          "${toString localDir}/config.d".source = "${configDir}/config.d";
-          "${toString localDir}/config.kdl".source = "${configDir}/config.kdl";
+        wayland.windowManager.niri = {
+          enable = true;
+          extraConfig = lib.mkMerge [
+            (lib.mkBefore ''
+              include "${configDir}/animations.kdl"
+              include "${configDir}/layout.kdl"
+              include "${configDir}/rules.kdl"
+              include "${configDir}/keybinds.kdl"
+              include "${configDir}/misc.kdl"
+              include "${configDir}/output.kdl"
+              include "${configDir}/input.kdl"
+            '')
+          ];
         };
 
         # Persistent clipboard
