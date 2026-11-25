@@ -12,8 +12,8 @@
     homeManager =
       { pkgs, ... }:
       let
-        localDir = ./niri;
-        cfgDir =
+        localDir = ./config;
+        configDir =
           pkgs.runCommand "niri-config-checked"
             {
               nativeBuildInputs = [ pkgs.niri ];
@@ -29,9 +29,9 @@
         # Config
         wayland.windowManager.niri.enable = true;
         xdg.configFile = {
-          "niri/config.kdl".source = "${cfgDir}/config.kdl";
-          "niri/config.d".source = "${cfgDir}/config.d";
-          "niri/modules".source = "${cfgDir}/modules";
+          "${toString localDir}/modules".source = "${configDir}/modules";
+          "${toString localDir}/config.d".source = "${configDir}/config.d";
+          "${toString localDir}/config.kdl".source = "${configDir}/config.kdl";
         };
 
         # Persistent clipboard
