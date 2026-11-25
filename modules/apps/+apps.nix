@@ -1,5 +1,6 @@
+{ den, ... }:
 {
-  den.aspects.apps = { den, ... }: {
+  den.aspects.apps = {
     includes = with den.aspects; [
       kde.apps
       obsidian

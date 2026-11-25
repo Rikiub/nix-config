@@ -1,5 +1,6 @@
+{ den, lib, ... }:
 {
-  den.aspects.desktop.niri = { den, ... }: {
+  den.aspects.desktop.niri = {
     includes = with den.aspects; [
       noctalia.shell
       noctalia.greeter
@@ -10,7 +11,7 @@
     };
 
     homeManager =
-      { lib, ... }:
+      { ... }:
       let
         configDir = ./config;
 

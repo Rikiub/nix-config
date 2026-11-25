@@ -1,11 +1,10 @@
+{ den, ... }:
 {
-  den.aspects = {
-    network = { den, ... }: {
-      includes = with den.aspects; [
-        networkmanager
-        iwd
-      ];
-    };
+  den.aspects.network = {
+    includes = with den.aspects.network; [
+      networkmanager
+      iwd
+    ];
 
     networkmanager.nixos = { ... }: {
       # Use NetworkManager as main

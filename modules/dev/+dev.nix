@@ -1,5 +1,6 @@
+{ den, ... }:
 {
-  den.aspects.dev = { den, ... }: {
+  den.aspects.dev = {
     includes = with den.aspects; [
       # Editors
       zed-editor # GUI

@@ -1,5 +1,6 @@
+{ den, ... }:
 {
-  den.aspects.gaming = { den, ... }: {
+  den.aspects.gaming = {
     includes = with den.aspects; [
       gaming.performance
       heroic

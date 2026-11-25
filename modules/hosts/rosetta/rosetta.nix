@@ -1,3 +1,4 @@
+{ den, ... }:
 let
   dataDrive = {
     mount = "/media/Datos";
@@ -16,7 +17,7 @@ in
     users.rikiub = { };
   };
 
-  den.aspects.rosetta = { den, ... }: {
+  den.aspects.rosetta = {
     includes = with den.aspects; [
       # System
       nixos

@@ -1,5 +1,6 @@
+{ den, ... }:
 {
-  den.aspects.gaming.performance = { den, ... }: {
+  den.aspects.gaming.performance = {
     includes = with den.aspects; [ mangohud ];
 
     nixos = { ... }: {

@@ -1,9 +1,10 @@
+{ inputs, ... }:
 {
   flake-file.inputs = {
     autopair-nu.url = "github:mst-mkt/autopair.nu";
   };
 
-  den.aspects.nushell.homeManager = { inputs, ... }: {
+  den.aspects.nushell.homeManager = { ... }: {
     imports = [ inputs.autopair-nu.homeModules.default ];
 
     programs = {

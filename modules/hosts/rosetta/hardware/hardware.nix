@@ -1,5 +1,6 @@
+{ den, inputs, ... }:
 {
-  den.aspects.rosetta = { den, inputs, ... }: {
+  den.aspects.rosetta = {
     includes = with den.aspects; [
       battery
       bluetooth

@@ -1,5 +1,6 @@
+{ den, ... }:
 {
-  den.aspects.shell = { den, ... }: {
+  den.aspects.shell = {
     includes = with den.aspects; [
       shell.cli
       shell.clipboard

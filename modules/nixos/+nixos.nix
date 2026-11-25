@@ -1,5 +1,6 @@
+{ den, ... }:
 {
-  den.aspects.nixos = { den, ... }: {
+  den.aspects.nixos = {
     includes = with den.aspects; [
       # Core
       boot
