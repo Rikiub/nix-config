@@ -1,7 +1,7 @@
 {
   den.aspects.apps = { den, ... }: {
     includes = with den.aspects; [
-      kde-apps
+      kde
       obsidian
       ghostty
       firefox

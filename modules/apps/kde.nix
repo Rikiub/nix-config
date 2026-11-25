@@ -1,13 +1,17 @@
+{ den, ... }:
 {
-  den.aspects = {
-    kde-apps = { den, ... }: {
-      includes = with den.aspects; [ dolphin ];
+  den.aspects.kde = {
+    includes = with den.aspects.kde; [ apps ];
 
-      nixos = { ... }: {
-        programs.partition-manager.enable = true; # KDE Partition Manager
-      };
+    apps = {
+      includes = with den.aspects.kde; [
+        dolphin
+        partition-manager
+      ];
 
       homeManager = { pkgs, ... }: {
+        # Common Apps
+
         home.packages = with pkgs; [
           haruna # Video Player
           kdePackages.elisa # Music Player
@@ -23,6 +27,13 @@
           "image/*" = "org.kde.koko.desktop";
           "application/pdf" = "org.kde.okular.desktop";
         };
+      };
+    };
+
+    partition-manager = {
+      # KDE Partition Manager
+      nixos = { ... }: {
+        programs.partition-manager.enable = true;
       };
     };
 
