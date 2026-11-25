@@ -13,22 +13,21 @@
       { lib, ... }:
       let
         configDir = ./config;
+
+        # List of all files in the directory
+        includes = lib.concatMapStringsSep "\n" (name: ''include "${configDir}/${name}"'') (
+          lib.attrNames (
+            lib.filterAttrs (name: type: type == "regular" && lib.hasSuffix ".kdl" name) (
+              builtins.readDir configDir
+            )
+          )
+        );
       in
       {
         # Config
         wayland.windowManager.niri = {
           enable = true;
-          extraConfig = lib.mkMerge [
-            (lib.mkBefore ''
-              include "${configDir}/animations.kdl"
-              include "${configDir}/layout.kdl"
-              include "${configDir}/rules.kdl"
-              include "${configDir}/keybinds.kdl"
-              include "${configDir}/misc.kdl"
-              include "${configDir}/output.kdl"
-              include "${configDir}/input.kdl"
-            '')
-          ];
+          extraConfig = lib.mkBefore includes;
         };
 
         # Persistent clipboard
