@@ -1,12 +1,13 @@
 {
   den.aspects.rosetta.homeManager =
     {
+      host,
       config,
       pkgs,
       ...
     }:
     let
-      rootDir = "/media/Datos/Raiz/Usuario";
+      dataHome = host.dataDrive.home;
 
       dev = {
         phone = "Android";
@@ -36,22 +37,22 @@
             };
             "Obsidian" = {
               id = "obsidian";
-              path = "${rootDir}/Documentos/Obsidian";
+              path = "${dataHome}/Documentos/Obsidian";
               inherit devices ignorePerms;
             };
             "Musica" = {
               id = "musica";
-              path = "${rootDir}/Musica/Personal";
+              path = "${dataHome}/Musica/Personal";
               inherit devices ignorePerms;
             };
             "Imagenes" = {
               id = "imagenes";
-              path = "${rootDir}/Imagenes/Personal";
+              path = "${dataHome}/Imagenes/Personal";
               inherit devices ignorePerms;
             };
             "Videos" = {
               id = "videos";
-              path = "${rootDir}/Videos/Personal";
+              path = "${dataHome}/Videos/Personal";
               inherit devices ignorePerms;
             };
           };

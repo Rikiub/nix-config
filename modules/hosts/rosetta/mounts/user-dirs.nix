@@ -1,11 +1,16 @@
 {
   den.aspects.rosetta.homeManager =
-    { config, lib, ... }:
+    {
+      host,
+      config,
+      lib,
+      ...
+    }:
     let
       # Config
       directory = {
-        root = "/media/Datos/Raiz";
-        user = "/media/Datos/Raiz/Usuario";
+        root = host.dataDrive.root;
+        user = host.dataDrive.home;
       };
 
       target = {

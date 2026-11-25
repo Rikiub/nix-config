@@ -1,5 +1,5 @@
 {
-  den.aspects.rosetta.homeManager = { config, ... }: {
+  den.aspects.rosetta.homeManager = { host, config, ... }: {
     # Obsidian Settings
     programs.obsidian.vaults = {
       "Obsidian".target = "Documentos/Obsidian";
@@ -10,10 +10,10 @@
       enable = true;
 
       backups.obsidian = {
-        repository = "/media/Datos/Raiz/Respaldos/Restic/Obsidian";
+        repository = "${host.dataDrive.backups}/Restic/Obsidian";
         passwordFile = "${config.xdg.configHome}/restic/obsidian";
 
-        paths = [ "/media/Datos/Raiz/Usuario/Documentos/Obsidian" ];
+        paths = [ "${host.dataDrive.home}/Documentos/Obsidian" ];
         initialize = true;
 
         pruneOpts = [
