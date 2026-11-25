@@ -184,7 +184,7 @@ pinned = [
 ]
 
 [shell.screenshot]
-directory = "/home/rikiub/Imagenes/Screenshots"
+directory = "/home/rikiub/Imagenes/Personal/📷 Capturas de pantalla"
 
 [theme]
 builtin = "Rosé Pine"
