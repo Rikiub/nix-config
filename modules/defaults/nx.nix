@@ -56,7 +56,7 @@
       ];
 
       # Carapace completions
-      xdg.configFile."carapace/specs/nx.yaml" = {
+      xdg.configFile."carapace/specs/${cmd_name}.yaml" = {
         text = lib.generators.toYAML { } {
           name = cmd_name;
           description = "Global flake justfile";
