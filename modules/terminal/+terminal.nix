@@ -2,10 +2,9 @@
 {
   den.aspects.terminal = {
     includes = with den.aspects; [
+      bat
       cli
       clipboard
-      bat
-      opencode
       nushell # Interactive Shell
     ];
   };
