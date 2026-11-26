@@ -1,5 +1,5 @@
 {
-  den.aspects.default-shell.nixos = { pkgs, ... }: {
+  den.default.nixos = { pkgs, ... }: {
     # Required for pkexec
     environment.shells = [ pkgs.nushell ];
 

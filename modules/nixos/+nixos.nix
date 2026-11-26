@@ -3,9 +3,7 @@
   den.aspects.nixos = {
     includes = with den.aspects; [
       # Core
-      boot
-      default-shell
-      clean
+      bootloader
       kernel
       locale
       nix

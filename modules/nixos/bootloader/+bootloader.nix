@@ -1,6 +1,6 @@
 { den, ... }:
 {
-  den.aspects.boot = {
+  den.aspects.bootloader = {
     includes = with den.aspects; [
       limine
       plymouth

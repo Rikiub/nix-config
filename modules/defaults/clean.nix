@@ -1,5 +1,5 @@
 {
-  den.aspects.clean.nixos = { ... }: {
+  den.default.homeManager = { ... }: {
     programs.nh = {
       enable = true;
       clean = {
