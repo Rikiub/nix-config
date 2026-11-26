@@ -1,17 +1,15 @@
 {
-  den.default.nixos = { pkgs, ... }: {
-    # Required for pkexec
-    environment.shells = [ pkgs.nushell ];
+  den.default.nixos =
+    { pkgs, ... }:
+    let
+      shell = "nushell";
+    in
+    {
+      # Required for pkexec
+      environment.shells = [ pkgs.${shell} ];
 
-    # Set Nushell as default from Bash
-    programs.nushell.enable = true;
-    programs.bash = {
-      enable = true;
-      interactiveShellInit = ''
-        if ! [ "$TERM" = "dumb" ] && [ -z "$BASH_EXECUTION_STRING" ]; then
-          exec nu
-        fi
-      '';
+      # Set shell
+      programs.${shell}.enable = true;
+      users.defaultUserShell = pkgs.${shell};
     };
-  };
 }

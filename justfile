@@ -35,6 +35,11 @@ repl:
 clean:
     nh clean all --optimise
 
+[doc("Shell to a build environment")]
+[group("unix")]
+develop env="":
+    nix develop .#{{ env }}
+
 # nixos
 
 [doc("Build and activate the new configuration (until next reboot)")]
