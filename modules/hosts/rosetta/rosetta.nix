@@ -8,7 +8,7 @@
       # User
       desktop.niri
       apps
-      shell
+      terminal
       develop
       gaming
     ];
