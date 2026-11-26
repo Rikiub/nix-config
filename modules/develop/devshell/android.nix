@@ -1,3 +1,6 @@
+# Android DevShell for quick prototyping
+# Enter with `just develop android` and `run-test-emulator`.
+
 { inputs, ... }:
 {
   perSystem =
@@ -10,13 +13,32 @@
           android_sdk.accept_license = true;
         };
       };
+
+      emulator = pkgs.androidenv.emulateApp {
+        name = "android-emulator";
+
+        platformVersion = "35";
+        abiVersion = "x86_64";
+        systemImageType = "google_apis_playstore"; # or "google_apis" without Play Store
+        deviceName = "pixel";
+
+        # Keep the AVD between runs
+        androidUserHome = "\${ANDROID_USER_HOME:-\${XDG_DATA_HOME:-$HOME/.local/share}/android}";
+
+        configOptions = {
+          "hw.gpu.enabled" = "yes";
+          "hw.gpu.mode" = "host"; # fall back to "swiftshader_indirect" if it crashes
+        };
+      };
     in
     {
+      packages.android-emulator = emulator;
+
       devShells.android = pkgs.mkShell {
-        packages = with pkgs; [
-          android-studio
-          android-tools
-          jdk17
+        packages = [
+          emulator
+          pkgs.android-tools # adb/fastboot on PATH
+          pkgs.jdk17 # only if you build apps with Gradle
         ];
       };
     };
