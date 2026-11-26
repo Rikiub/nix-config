@@ -25,8 +25,8 @@
         obsidian = pkgs.fetchFromGitHub {
           owner = "obsidianmd";
           repo = "obsidian-skills";
-          rev = "caf3e98cd22d810db164f26c9a442f0a280daa43"; # tag: 1.2.0
-          hash = "sha256-Izjh+8Zd4I3PIDdpRSbMMygFC2VebBSIGjq8ZvK2xDo=";
+          rev = "79e85b73ef041fdfb6437ab3824e2fe29eda9244"; # tag: 1.2.3
+          hash = "sha256-uz6ABXOX1uxFAy8xLIuXEMGPuk9/MDKnQJLeKnVj7t4=";
         };
       };
     };
