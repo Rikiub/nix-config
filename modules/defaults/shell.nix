@@ -15,7 +15,7 @@ in
 
     homeManager = { ... }: {
       # Change `nix develop` and `nix-shell` default shell.
-      programs.nix-your-shel.enable = true;
+      programs.nix-your-shell.enable = true;
 
       # Allow programs to override shell config
       home.shell.enableShellIntegration = true;
