@@ -1,7 +1,7 @@
 { den, ... }:
 {
-  den.aspects.nixos = {
-    includes = with den.aspects; [
+  den.aspects.system = {
+    includes = with den.aspects.system; [
       # Core
       bootloader
       kernel

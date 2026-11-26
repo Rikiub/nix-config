@@ -1,5 +1,5 @@
 {
-  den.aspects.openrgb.nixos = { pkgs, config, ... }: {
+  den.aspects.hardware.openrgb.nixos = { pkgs, config, ... }: {
     services.hardware.openrgb = {
       enable = true;
       startupProfile = "default";

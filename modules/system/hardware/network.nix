@@ -1,7 +1,7 @@
 { den, ... }:
 {
-  den.aspects.network = {
-    includes = with den.aspects.network; [
+  den.aspects.hardware.network = {
+    includes = with den.aspects.hardware.network; [
       firewall
       networkmanager
       iwd

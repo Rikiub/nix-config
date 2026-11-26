@@ -1,7 +1,7 @@
 { den, inputs, ... }:
 {
   den.aspects.rosetta = {
-    includes = with den.aspects; [
+    includes = with den.aspects.hardware; [
       battery
       bluetooth
       network

@@ -1,5 +1,5 @@
 {
-  den.aspects.sound.nixos = { ... }: {
+  den.aspects.hardware.sound.nixos = { ... }: {
     # Enable sound with pipewire.
     services.pulseaudio.enable = false;
 

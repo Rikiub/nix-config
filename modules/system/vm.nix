@@ -1,5 +1,5 @@
 {
-  den.aspects.vm.nixos = { ... }: {
+  den.aspects.system.vm.nixos = { ... }: {
     virtualisation.vmVariant = {
       virtualisation = {
         memorySize = 4096; # 4 GiB of RAM

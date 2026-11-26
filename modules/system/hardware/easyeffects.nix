@@ -1,5 +1,5 @@
 {
-  den.aspects.easyeffects = {
+  den.aspects.hardware.easyeffects = {
     nixos = { ... }: {
       programs.dconf.enable = true;
     };

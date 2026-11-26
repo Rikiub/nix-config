@@ -2,8 +2,8 @@
 {
   den.aspects.rosetta = {
     includes = with den.aspects; [
-      # System
-      nixos
+      # NixOS
+      system
 
       # User
       desktop

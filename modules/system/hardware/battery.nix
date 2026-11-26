@@ -1,5 +1,5 @@
 {
-  den.aspects.battery.nixos = { lib, ... }: {
+  den.aspects.hardware.battery.nixos = { lib, ... }: {
     services = {
       # Suspend on lid close
       logind.settings.Login = {

@@ -1,5 +1,5 @@
 {
-  den.aspects.locale.nixos = { ... }: {
+  den.aspects.system.locale.nixos = { ... }: {
     # Set your time zone.
     time.timeZone = "America/Caracas";
 

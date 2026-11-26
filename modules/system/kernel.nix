@@ -1,5 +1,5 @@
 {
-  den.aspects.kernel.nixos = { pkgs, ... }: {
+  den.aspects.system.kernel.nixos = { pkgs, ... }: {
     boot = {
       kernelPackages = pkgs.linuxPackages_latest;
     };

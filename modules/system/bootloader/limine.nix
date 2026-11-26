@@ -1,5 +1,5 @@
 {
-  den.aspects.limine.nixos = { ... }: {
+  den.aspects.system.limine.nixos = { ... }: {
     boot.loader = {
       limine = {
         enable = true;

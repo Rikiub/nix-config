@@ -1,5 +1,5 @@
 {
-  den.aspects.ssh.nixos = { ... }: {
+  den.aspects.system.ssh.nixos = { ... }: {
     services.openssh = {
       enable = true;
       openFirewall = true;
