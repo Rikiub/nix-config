@@ -1,15 +1,15 @@
-{
-  den.default.nixos =
-    { pkgs, ... }:
-    let
-      shell = "nushell";
-    in
-    {
-      # Required for pkexec
-      environment.shells = [ pkgs.${shell} ];
+# Default shell for root and users
 
-      # Set shell
-      programs.${shell}.enable = true;
-      users.defaultUserShell = pkgs.${shell};
+{ den, ... }:
+let
+  shell = "nushell";
+in
+{
+  den.default = {
+    includes = [ (den.batteries.user-shell shell) ];
+
+    nixos = { pkgs, ... }: {
+      environment.shells = [ pkgs.${shell} ];
     };
+  };
 }
