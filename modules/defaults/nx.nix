@@ -14,6 +14,7 @@
       ...
     }:
     let
+      cmd_name = "nx";
       justfile = "${user.flakeDirectory}/justfile";
     in
     {
@@ -38,7 +39,7 @@
       # Global helper
       home.packages = [
         (pkgs.writeShellApplication {
-          name = "nx";
+          name = cmd_name;
           runtimeInputs = with pkgs; [ just ];
           text = ''
             #!/usr/bin/env bash
@@ -57,7 +58,7 @@
       # Carapace completions
       xdg.configFile."carapace/specs/nx.yaml" = {
         text = lib.generators.toYAML { } {
-          name = "nx";
+          name = cmd_name;
           description = "Global flake justfile";
           run = [
             "just"
