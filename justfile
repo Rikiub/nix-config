@@ -18,6 +18,11 @@ update *args:
     @just sync
     -topgrade {{ args }}
 
+[doc("Shell to a build environment")]
+[group("unix")]
+develop env="":
+    nix develop .#{{ env }}
+
 [doc("Sync flake inputs")]
 [group("unix")]
 [private]
@@ -34,11 +39,6 @@ repl:
 [group("unix")]
 clean:
     nh clean all --optimise
-
-[doc("Shell to a build environment")]
-[group("unix")]
-develop env="":
-    nix develop .#{{ env }}
 
 # nixos
 
