@@ -1,4 +1,4 @@
-# Enabled Experimental Features for Nix
+# Enabled experimental features for nix
 
 {
   den.default.nixos = { ... }: {
