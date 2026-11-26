@@ -27,5 +27,10 @@
       "kvm"
       "adbusers"
     ];
+
+    # Ports for external tooling
+    networking.firewall.allowedTCPPorts = [
+      8081 # Expo Go
+    ];
   };
 }

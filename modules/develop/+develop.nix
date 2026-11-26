@@ -17,7 +17,6 @@
       python
 
       # Tools
-      dev-ports
       direnv
       git
       just
