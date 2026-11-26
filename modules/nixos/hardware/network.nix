@@ -2,19 +2,31 @@
 {
   den.aspects.network = {
     includes = with den.aspects.network; [
+      firewall
       networkmanager
       # iwd
     ];
 
+    firewall.nixos = { ... }: {
+      networking = {
+        firewall.enable = true;
+
+        # Use nftables instead of iptables
+        # Could make issues with docker
+        nftables.enable = true;
+      };
+    };
+
     networkmanager.nixos = { ... }: {
-      # Use NetworkManager as main
       networking.networkmanager.enable = true;
     };
 
     iwd.nixos = { ... }: {
-      # Prefer iwd as wireless backend
       networking = {
+        # Prefer iwd as networkmanager wireless backend
         networkmanager.wifi.backend = "iwd";
+
+        # Settings
         wireless.iwd = {
           enable = true;
           settings = {

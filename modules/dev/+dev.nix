@@ -12,6 +12,7 @@
       nodejs
       python
 
+      dev.firewall
       direnv
       git
       just
