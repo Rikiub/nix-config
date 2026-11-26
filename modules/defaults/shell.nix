@@ -14,11 +14,11 @@ in
     };
 
     homeManager = { ... }: {
-      # Allow programs to override shell config
-      home.shell.enableShellIntegration = true;
-
       # Change `nix develop` and `nix-shell` default shell.
       programs.nix-your-shel.enable = true;
+
+      # Allow programs to override shell config
+      home.shell.enableShellIntegration = true;
     };
   };
 }
