@@ -3,7 +3,7 @@
   den.aspects.network = {
     includes = with den.aspects.network; [
       networkmanager
-      iwd
+      # iwd
     ];
 
     networkmanager.nixos = { ... }: {
