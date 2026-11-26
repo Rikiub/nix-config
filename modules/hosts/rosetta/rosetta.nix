@@ -6,7 +6,7 @@
       nixos
 
       # User
-      desktop.niri
+      desktop
       apps
       terminal
       develop
