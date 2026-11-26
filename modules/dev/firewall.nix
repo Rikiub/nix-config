@@ -2,6 +2,7 @@
   den.aspects.dev.firewall.nixos = { ... }: {
     networking.firewall.allowedTCPPorts = [
       80 # HTTP
+      8081 # Expo
       443 # HTTPS
       3000 # Common for React, Node.js, etc.
       5173 # Vite development server
