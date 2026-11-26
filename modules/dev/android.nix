@@ -1,11 +1,5 @@
-{ den, ... }:
 {
   den.aspects.dev.android = {
-    include = with den.aspects.dev.android; [
-      studio
-      adb
-    ];
-
     studio.nixos = { user, pkgs, ... }: {
       environment.systemPackages = with pkgs; [ android-studio ];
 

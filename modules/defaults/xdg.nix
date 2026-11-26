@@ -94,6 +94,14 @@
           XCOMPOSEFILE = "${config.xdg.cacheHome}/X11/xcompose";
           XCOMPOSECACHE = "${config.xdg.cacheHome}/X11/xcompose";
           ERRFILE = "${config.xdg.dataHome}/X11/xsession-errors";
+
+          # Android
+          ANDROID_USER_HOME = "${config.xdg.dataHome}/android";
+          ANDROID_HOME = "${config.xdg.dataHome}/android/sdk";
+          ANDROID_AVD_HOME = "${config.xdg.dataHome}/android/avd";
+
+          # CUDA (NVIDIA)
+          CUDA_CACHE_PATH = "${config.xdg.cacheHome}/nv";
         };
       };
     };
