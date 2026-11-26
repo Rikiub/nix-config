@@ -1,4 +1,17 @@
-{ den, ... }:
 {
-  den.default.includes = [ (den.batteries.user-shell "nushell") ];
+  den.default.nixos = { pkgs, ... }: {
+    # Required for pkexec
+    environment.shells = [ pkgs.nushell ];
+
+    # Set Nushell as default from Bash
+    programs.nushell.enable = true;
+    programs.bash = {
+      enable = true;
+      interactiveShellInit = ''
+        if ! [ "$TERM" = "dumb" ] && [ -z "$BASH_EXECUTION_STRING" ]; then
+          exec nu
+        fi
+      '';
+    };
+  };
 }
