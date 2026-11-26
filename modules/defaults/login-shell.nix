@@ -9,7 +9,16 @@ in
     includes = [ (den.batteries.user-shell shell) ];
 
     nixos = { pkgs, ... }: {
+      # Required for pkexec.
       environment.shells = [ pkgs.${shell} ];
+    };
+
+    homeManager = { ... }: {
+      # Change `nix develop` and `nix-shell` too.
+      programs.nix-your-shell = {
+        enable = true;
+        enableNushellIntegration = true;
+      };
     };
   };
 }
