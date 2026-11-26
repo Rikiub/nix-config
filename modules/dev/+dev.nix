@@ -13,6 +13,7 @@
       python
 
       dev.firewall
+      dev.android
       direnv
       git
       just
