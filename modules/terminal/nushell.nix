@@ -19,21 +19,14 @@
       # Prompt
       starship = {
         enable = true;
-        enableNushellIntegration = true;
         presets = [ "pure-preset" ];
       };
 
       # Completions
-      carapace = {
-        enable = true;
-        enableNushellIntegration = true;
-      };
+      carapace.enable = true;
 
       # cd shortcuts
-      zoxide = {
-        enable = true;
-        enableNushellIntegration = true;
-      };
+      zoxide.enable = true;
 
       # Autopair
       autopair-nu.enable = true;

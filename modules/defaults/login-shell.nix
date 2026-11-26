@@ -14,10 +14,12 @@ in
     };
 
     homeManager = { ... }: {
+      # Allow programs to override shell config
+      home.shell.enableShellIntegration = true;
+
       # Change `nix develop` and `nix-shell` too.
       programs.nix-your-shell = {
         enable = true;
-        enableNushellIntegration = true;
       };
     };
   };

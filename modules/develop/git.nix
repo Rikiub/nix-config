@@ -11,16 +11,10 @@
       };
 
       # Better diff
-      delta = {
-        enable = true;
-        enableGitIntegration = true;
-      };
+      delta.enable = true;
 
       # Convenient TUI
-      lazygit = {
-        enable = true;
-        enableNushellIntegration = true;
-      };
+      lazygit.enable = true;
 
       # GitHub CLI
       gh = {

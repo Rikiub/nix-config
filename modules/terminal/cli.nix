@@ -13,10 +13,7 @@
 
       # Explorers
       ripgrep.enable = true;
-      yazi = {
-        enable = true;
-        enableNushellIntegration = true;
-      };
+      yazi.enable = true;
 
       # TL;DR
       tealdeer = {
