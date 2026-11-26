@@ -1,5 +1,5 @@
 {
-  den.aspects.system.nix.nixos = { ... }: {
+  den.aspects.system.misc.nixos = { ... }: {
     # Metadata
     system.nixos.label = "NixOS";
 

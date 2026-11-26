@@ -6,7 +6,7 @@
       bootloader
       kernel
       locale
-      nix
+      misc
       vm
 
       # Programs
