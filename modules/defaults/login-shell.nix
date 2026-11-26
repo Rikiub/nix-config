@@ -17,10 +17,8 @@ in
       # Allow programs to override shell config
       home.shell.enableShellIntegration = true;
 
-      # Change `nix develop` and `nix-shell` too.
-      programs.nix-your-shell = {
-        enable = true;
-      };
+      # Change `nix develop` and `nix-shell` default shell.
+      programs.nix-your-shel.enable = true;
     };
   };
 }
