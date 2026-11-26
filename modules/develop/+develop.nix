@@ -1,6 +1,6 @@
 { den, ... }:
 {
-  den.aspects.dev = {
+  den.aspects.develop = {
     includes = with den.aspects; [
       # Editors
       zed-editor # GUI
@@ -12,7 +12,7 @@
       nodejs
       python
 
-      dev.firewall
+      develop.firewall
       direnv
       git
       just

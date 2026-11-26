@@ -1,5 +1,5 @@
 {
-  den.aspects.dev.firewall.nixos = { ... }: {
+  den.aspects.develop.firewall.nixos = { ... }: {
     networking.firewall.allowedTCPPorts = [
       8081 # Expo Go
     ];
