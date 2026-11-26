@@ -1,4 +1,4 @@
-# Default shell for root and users
+# Default shell for system and users
 
 { den, ... }:
 let
