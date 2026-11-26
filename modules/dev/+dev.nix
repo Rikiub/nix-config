@@ -6,13 +6,15 @@
       zed-editor # GUI
       fresh-editor # TUI
 
-      direnv
-      git
-      just
+      kdl
       lsp
       nix
       nodejs
       python
+
+      direnv
+      git
+      just
     ];
   };
 }
