@@ -6,7 +6,7 @@
       zed-editor # GUI
       fresh-editor # TUI
 
-      kdl
+      # kdl
       lsp
       nix
       nodejs

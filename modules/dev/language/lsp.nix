@@ -15,6 +15,7 @@
     editor.homeManager = { ... }: {
       programs.zed-editor.extensions = [
         "toml"
+        "kdl"
         "lua"
       ];
     };
