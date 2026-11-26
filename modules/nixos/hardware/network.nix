@@ -4,7 +4,7 @@
     includes = with den.aspects.network; [
       firewall
       networkmanager
-      # iwd
+      iwd
     ];
 
     firewall.nixos = { ... }: {
