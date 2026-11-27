@@ -3,15 +3,18 @@
 # Use it on your hosts like this:
 #
 # ```nix
-# den.aspects.<hostname>.nixos = { ... }: {
-#   imports = with inputs.nixos-hardware.nixosModules; [
-#     common-pc-laptop
-#     common-pc-ssd
-#     common-cpu-intel
-#     common-gpu-nvidia
-#     ...
-#   ];
-# };
+# { inputs, ... }:
+# {
+#   den.aspects.<hostname>.nixos = { ... }: {
+#     imports = with inputs.nixos-hardware.nixosModules; [
+#       common-pc-laptop
+#       common-pc-ssd
+#       common-cpu-intel
+#       common-gpu-nvidia
+#       ...
+#     ];
+#   };
+# }
 # ```
 #
 # Check available modules in:
