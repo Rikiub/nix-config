@@ -2,7 +2,7 @@
     <img src="./assets/logo.webp" width="200" height="200">
 </p>
 
-My personal future-proof **Nix** configuration built with the [den](https://den.denful.dev/) framework.
+My personal future-proof **Nix** configuration built with the [den](https://den.denful.dev) framework.
 
 Should work in **NixOS** and **home-manager** standalone.
 
