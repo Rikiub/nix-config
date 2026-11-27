@@ -1,46 +1,18 @@
 # Global helper for access the flake justfile from anywhere
 
-{ den, lib, ... }:
+{ lib, ... }:
 {
-  # Exposes flake apps under the name of each host / home for building with nh.
-  perSystem = { pkgs, ... }: {
-    packages = den.lib.nh.denPackages { fromFlake = true; } pkgs;
-  };
-
   den.default.homeManager =
-    {
-      pkgs,
-      user,
-      ...
-    }:
+    { pkgs, user, ... }:
     let
-      cmd_name = "nx";
+      command_name = "nx";
       justfile = "${user.flakeDirectory}/justfile";
     in
     {
-      # Justfile dependencies
-      programs.topgrade = {
-        enable = true;
-        settings = {
-          misc = {
-            disable = [
-              "nix"
-              "home_manager"
-            ];
-            pre_sudo = true;
-          };
-        };
-      };
-
-      programs.nh = {
-        enable = true;
-        flake = user.flakeDirectory;
-      };
-
       home.packages = [
-        # Global helper
+        # Helper command
         (pkgs.writeShellApplication {
-          name = cmd_name;
+          name = command_name;
           runtimeInputs = with pkgs; [ just ];
           text = ''
             #!/usr/bin/env bash
@@ -60,7 +32,7 @@
       ];
 
       # Carapace completions
-      xdg.configFile."carapace/specs/${cmd_name}.yaml" =
+      xdg.configFile."carapace/specs/${command_name}.yaml" =
         let
           flakeShow = "nix flake show --json ${user.flakeDirectory}";
 
@@ -73,7 +45,7 @@
         in
         {
           text = lib.generators.toYAML { } {
-            name = cmd_name;
+            name = command_name;
             run = [
               "just"
               "--justfile"
