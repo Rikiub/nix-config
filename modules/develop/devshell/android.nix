@@ -1,5 +1,4 @@
-# Android DevShell for quick prototyping
-# Enter with `just develop android` and `run-test-emulator`.
+# Android environment for quick prototyping
 
 { inputs, ... }:
 {
@@ -14,7 +13,7 @@
         };
       };
 
-      emulator = pkgs.androidenv.emulateApp {
+      android-emulator = pkgs.androidenv.emulateApp {
         name = "android-emulator";
 
         platformVersion = "35";
@@ -32,14 +31,17 @@
       };
     in
     {
-      packages.android-emulator = emulator;
-
       devShells.android = pkgs.mkShell {
-        packages = [
-          emulator
-          pkgs.android-tools # adb/fastboot on PATH
-          pkgs.jdk17 # only if you build apps with Gradle
+        packages = with pkgs; [
+          android-emulator # Custom Emulator
+          android-tools # adb/fastboot on PATH
+          gradle # build apps with Gradle
+          jdk17 # build apps with Gradle
         ];
+
+        shellHook = ''
+          echo "💡 Start emulator with 'run-test-emulator'."
+        '';
       };
     };
 
