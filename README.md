@@ -8,6 +8,8 @@ Should work in **NixOS** and **home-manager** standalone.
 
 Before switch on a new machine, please create a [host](./modules/hosts) including all the aspects you need.
 
+---
+
 On **NixOS** distros, you need take in account:
 
 - Include [system](./modules/system/+system.nix) to get core configuration.
