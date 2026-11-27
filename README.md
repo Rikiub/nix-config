@@ -1,4 +1,4 @@
-![NixOS](https://brand.nixos.org/logos/nixos-logo-rainbow-gradient-black-regular-horizontal-recommended.svg)
+![Logo](./assets/logo.webp)
 
 My personal future-proof **Nix** configuration built with the [den](https://den.denful.dev/) framework.
 
