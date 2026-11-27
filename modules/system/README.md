@@ -1,1 +1,1 @@
-NixOS specific configuration.
+NixOS system configuration.

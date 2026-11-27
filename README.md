@@ -14,7 +14,7 @@ Before switch on a new machine, please create a [host](./modules/hosts) includin
 
 On **NixOS** distros, you need take in account:
 
-- Include [system](./modules/system/+system.nix) to get core configuration.
+- Include [system](./modules/system) to get core configuration.
 - Include [hardware](./modules/system/hardware) needed for your machine.
 
 ## Installation
