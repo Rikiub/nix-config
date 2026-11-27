@@ -1,12 +1,5 @@
-{ inputs, ... }:
 {
-  flake-file.inputs = {
-    autopair-nu.url = "github:mst-mkt/autopair.nu";
-  };
-
   den.aspects.nushell.homeManager = { ... }: {
-    imports = [ inputs.autopair-nu.homeModules.default ];
-
     programs = {
       nushell = {
         enable = true;
@@ -27,9 +20,6 @@
 
       # cd shortcuts
       zoxide.enable = true;
-
-      # Autopair
-      autopair-nu.enable = true;
     };
   };
 }
