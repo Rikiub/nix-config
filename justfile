@@ -20,8 +20,8 @@ update *args:
 
 [doc("Shell to a build environment")]
 [group("unix")]
-develop env="":
-    nix develop .#{{ env }}
+develop name="":
+    nix develop .#{{ name }}
 
 [doc("Sync flake inputs")]
 [group("unix")]
