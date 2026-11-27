@@ -1,4 +1,6 @@
-![Logo](./assets/logo.webp)
+<center>
+    <img src="./assets/logo.webp" width="300" height="200">
+</center>
 
 My personal future-proof **Nix** configuration built with the [den](https://den.denful.dev/) framework.
 
