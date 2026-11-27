@@ -1,3 +1,7 @@
 Modules who define the base configuration.
 
-[./core](./core) is the principal foundation. These files shouldn't be modified too much, but if needed, be careful.
+---
+
+- [core](./core) is the principal foundation. These files shouldn't be modified too much, but if needed, be careful.
+- [integration](./integration) are defaults for hosts.
+- [tools](./tools) are external tooling and helpers for the flake.

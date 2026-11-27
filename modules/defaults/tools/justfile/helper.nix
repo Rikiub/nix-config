@@ -1,4 +1,4 @@
-# Global helper to access flake justfile from anywhere
+# Helper to access flake justfile from anywhere
 
 { lib, ... }:
 {

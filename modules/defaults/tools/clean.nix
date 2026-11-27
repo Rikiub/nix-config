@@ -1,3 +1,5 @@
+# Periodic nix-store cleaner
+
 {
   den.default.homeManager = { ... }: {
     programs.nh = {
