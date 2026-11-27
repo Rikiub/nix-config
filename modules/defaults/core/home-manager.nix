@@ -7,15 +7,15 @@
   };
 
   den.default = {
-    homeManager = { pkgs, ... }: {
-      home.stateVersion = "26.11";
+    homeManager = { host, pkgs, ... }: {
+      home.stateVersion = host.stateVersion;
 
       # Avoid errors for existing dotfiles
       home.backupCommand = "${pkgs.trash-cli}/bin/trash";
     };
 
     nixos = { ... }: {
-      # Use the system pkgs for home-manager users
+      # Use system pkgs for home-manager
       home-manager.useGlobalPkgs = true;
     };
   };

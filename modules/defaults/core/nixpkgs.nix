@@ -11,8 +11,8 @@
   flake-file.auto-follow.enable = true;
 
   # Configuration
-  den.default.nixos = { ... }: {
-    system.stateVersion = "26.11";
+  den.default.nixos = { host, ... }: {
+    system.stateVersion = host.stateVersion;
     nixpkgs.config.allowUnfree = true;
   };
 }
