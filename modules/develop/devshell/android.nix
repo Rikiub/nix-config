@@ -69,7 +69,7 @@
           export ANDROID_AVD_HOME="''${ANDROID_AVD_HOME:-$ANDROID_USER_HOME/avd}"
           mkdir -p "$ANDROID_USER_HOME" "$ANDROID_AVD_HOME"
 
-          echo "💡 Start emulator with 'run-test-emulator' (or 'emulator -avd pixel')."
+          echo "💡 Start emulator with 'run-test-emulator' or 'emulator -avd pixel'."
         '';
       };
     };
