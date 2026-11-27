@@ -1,10 +1,10 @@
 default:
     @just --list --unsorted
 
+# unix
+
 is_nixos := `grep -q '^ID=nixos' /etc/os-release && echo true || echo false`
 nh_cmd := if os() == "macos" { "nh darwin" } else if is_nixos == "true" { "nh os" } else { "nh home" }
-
-# unix
 
 [doc("Build and activate the new configuration")]
 [group("unix")]
