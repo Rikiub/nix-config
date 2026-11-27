@@ -30,4 +30,4 @@ sudo nixos-rebuild switch --flake /your/flake/path
 The main way to interact with the configuration is from the [justfile](./justfile).
 
 - Run `just` in the flake directory and see all available commands.
-- Run [nx](./modules/defaults/nx.nix) wrapper, which allows access to flake [justfile](./justfile) from anywhere.
+- Run [nx](./modules/defaults/justfile/helper.nix) wrapper, which allows access to flake [justfile](./justfile) from anywhere.
