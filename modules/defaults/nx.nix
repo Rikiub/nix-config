@@ -18,6 +18,7 @@
       justfile = "${user.flakeDirectory}/justfile";
     in
     {
+      # Justfile dependencies
       programs.topgrade = {
         enable = true;
         settings = {
@@ -36,8 +37,8 @@
         flake = user.flakeDirectory;
       };
 
-      # Global helper
       home.packages = [
+        # Global helper
         (pkgs.writeShellApplication {
           name = cmd_name;
           runtimeInputs = with pkgs; [ just ];
@@ -53,19 +54,44 @@
             exit 1
           '';
         })
+
+        # Carapace dependencies
+        pkgs.jq
       ];
 
       # Carapace completions
-      xdg.configFile."carapace/specs/${cmd_name}.yaml" = {
-        text = lib.generators.toYAML { } {
-          name = cmd_name;
-          description = "Global flake justfile";
-          run = [
-            "just"
-            "--justfile"
-            "${justfile}"
+      xdg.configFile."carapace/specs/${cmd_name}.yaml" =
+        let
+          hosts = [
+            "$(nix flake show --json ${user.flakeDirectory} | jq --raw-output '.nixosConfigurations | keys[]')"
           ];
+        in
+        {
+          text = lib.generators.toYAML { } {
+            name = cmd_name;
+            run = [
+              "just"
+              "--justfile"
+              "${justfile}"
+            ];
+            commands = [
+              {
+                name = "switch";
+                description = "Build and activate the new configuration";
+                completion.positional = [ hosts ];
+              }
+              {
+                name = "test";
+                description = "Build and activate the new configuration (until next reboot)";
+                completion.positional = [ hosts ];
+              }
+              {
+                name = "git";
+                description = "Run flake directory git";
+                run = [ "git" ];
+              }
+            ];
+          };
         };
-      };
     };
 }
