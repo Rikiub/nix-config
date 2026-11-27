@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./assets/logo.webp" width="300" height="300">
+    <img src="./assets/logo.webp" width="100" height="100">
 </p>
 
 My personal future-proof **Nix** configuration built with the [den](https://den.denful.dev/) framework.
