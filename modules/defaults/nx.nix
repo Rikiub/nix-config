@@ -62,8 +62,13 @@
       # Carapace completions
       xdg.configFile."carapace/specs/${cmd_name}.yaml" =
         let
+          flakeShow = "nix flake show --json ${user.flakeDirectory}";
+
           hosts = [
-            "$(nix flake show --json ${user.flakeDirectory} | jq --raw-output '.nixosConfigurations | keys[]')"
+            "$(${flakeShow} | jq --raw-output '.nixosConfigurations | keys[]')"
+          ];
+          devShells = [
+            "$(${flakeShow} | jq --raw-output '.devShells.[] | keys[]')"
           ];
         in
         {
@@ -86,8 +91,13 @@
                 completion.positional = [ hosts ];
               }
               {
+                name = "develop";
+                description = "Shell to a build environment";
+                completion.positional = [ devShells ];
+              }
+              {
                 name = "git";
-                description = "Run flake directory git";
+                description = "Run git on flake directory";
                 run = [ "git" ];
               }
             ];
