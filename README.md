@@ -1,6 +1,6 @@
 ![NixOS](https://brand.nixos.org/logos/nixos-logo-rainbow-gradient-black-regular-horizontal-recommended.svg)
 
-My personal future-proof **Nix** configuration builded with the [den](https://den.denful.dev/) framework.
+My personal future-proof **Nix** configuration built with the [den](https://den.denful.dev/) framework.
 
 Should work in **NixOS** and **home-manager** standalone.
 
