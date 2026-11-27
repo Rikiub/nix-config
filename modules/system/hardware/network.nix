@@ -12,7 +12,7 @@
         firewall.enable = true;
 
         # Use nftables instead of iptables
-        # Could make issues with docker
+        # Could give issues with docker
         nftables.enable = true;
       };
     };
