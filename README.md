@@ -1,6 +1,6 @@
-<center>
-    <img src="./assets/logo.webp" width="300" height="200">
-</center>
+<p align="center">
+    <img src="./assets/logo.webp" width="300" height="300">
+</p>
 
 My personal future-proof **Nix** configuration built with the [den](https://den.denful.dev/) framework.
 
