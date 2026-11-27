@@ -5,7 +5,7 @@
   den.default.homeManager =
     { pkgs, user, ... }:
     let
-      command_name = "nx";
+      command_name = "flake";
       justfile = "${user.flakeDirectory}/justfile";
     in
     {
