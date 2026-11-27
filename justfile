@@ -64,20 +64,20 @@ vm:
 info:
     nh os info
 
-# interactive
+# misc
 
 [doc("Search for a package in Nixpkgs")]
-[group("interactive")]
+[group("misc")]
 search *args:
     nh search {{ args }}
 
 [doc("Open configuration directory on application")]
-[group("interactive")]
+[group("misc")]
 open app=env("EDITOR", ""):
     @{{ app }} .
 
 [doc("Print flake directory")]
-[group("interactive")]
+[group("misc")]
 pwd:
     @pwd
 
