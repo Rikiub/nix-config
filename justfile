@@ -64,6 +64,18 @@ vm:
 info:
     nh os info
 
+# quality
+
+[doc("Check flake formatting and linting")]
+[group("quality")]
+check:
+    nix flake check
+
+[doc("Fix flake formatting and linting")]
+[group("quality")]
+format:
+    nix fmt
+
 # misc
 
 [doc("Search for a package in Nixpkgs")]
