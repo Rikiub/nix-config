@@ -2,7 +2,7 @@
 #
 # Use it on your hosts like this:
 #
-# ```
+# ```nix
 # den.aspects.<hostname>.nixos = { ... }: {
 #   imports = with inputs.nixos-hardware.nixosModules; [
 #     common-pc-laptop
