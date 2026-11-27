@@ -16,6 +16,7 @@
       platformVersion = "35";
       abiVersion = "x86_64"; # matches the x86_64 host
       systemImageType = "google_apis"; # lighter than playstore, allows `adb root`
+      deviceName = "pixel";
 
       sdkArgs = {
         includeEmulator = true;
@@ -30,8 +31,12 @@
 
       android-emulator = pkgs.androidenv.emulateApp {
         name = "android-emulator";
-        inherit platformVersion abiVersion systemImageType;
-        deviceName = "pixel"; # AVD name only, NOT a device profile
+        inherit
+          platformVersion
+          abiVersion
+          systemImageType
+          deviceName
+          ;
         sdkExtraArgs = sdkArgs;
 
         # Keep the AVD between runs
@@ -69,7 +74,7 @@
           export ANDROID_AVD_HOME="''${ANDROID_AVD_HOME:-$ANDROID_USER_HOME/avd}"
           mkdir -p "$ANDROID_USER_HOME" "$ANDROID_AVD_HOME"
 
-          echo "💡 Start emulator with 'run-test-emulator' or 'emulator -avd pixel'."
+          echo "💡 Start emulator with 'run-test-emulator' or 'emulator -avd ${deviceName}'."
         '';
       };
     };
