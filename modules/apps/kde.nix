@@ -18,6 +18,7 @@
           kdePackages.koko # Image Viewer
           kdePackages.okular # PDF Viewer
           kdePackages.kalk # Calculator
+          kdePackages.kclock # Clock
         ];
 
         # Set default apps
