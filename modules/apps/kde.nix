@@ -13,13 +13,20 @@
       homeManager = { pkgs, ... }: {
         # Common Apps
 
-        home.packages = with pkgs; [
-          haruna # Video Player
-          kdePackages.elisa # Music Player
-          kdePackages.koko # Image Viewer
-          kdePackages.okular # PDF Viewer
-          kdePackages.kalk # Calculator
-        ];
+        home.packages =
+          (with pkgs; [
+            haruna # Video Player
+          ])
+          ++ (with pkgs.kdePackages; [
+            elisa # Music Player
+            koko # Image Viewer
+            okular # PDF Viewer
+            kalk # Calculator
+            kamoso # Camera
+            krecorder # Recorder
+            # merkuro # Calendar
+            filelight # Disk Usage
+          ]);
 
         # Set default apps
         xdg.mimeApps.defaultApplications = {
