@@ -12,7 +12,6 @@
 
       homeManager = { pkgs, ... }: {
         # Common Apps
-
         home.packages =
           (with pkgs; [
             haruna # Video Player
