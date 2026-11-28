@@ -5,6 +5,7 @@
 
     apps = {
       includes = with den.aspects.kde; [
+        kclock
         dolphin
         partition-manager
       ];
@@ -18,7 +19,6 @@
           kdePackages.koko # Image Viewer
           kdePackages.okular # PDF Viewer
           kdePackages.kalk # Calculator
-          kdePackages.kclock # Clock
         ];
 
         # Set default apps
@@ -35,6 +35,17 @@
       # KDE Partition Manager
       nixos = { ... }: {
         programs.partition-manager.enable = true;
+      };
+    };
+
+    kclock = {
+      # KDE Clock
+      nixos = { ... }: {
+        programs.kclock.enable = true;
+      };
+
+      homeManager = { pkgs, ... }: {
+        home.packages = with pkgs; [ kdePackages.kclock ];
       };
     };
 
